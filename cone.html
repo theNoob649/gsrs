@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G.S.R.S. - Cone</title>
+  <link href="article.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <h1>G.S.R.S.</h1>
+    <h2>Geometric Shapes Reference Site</h2>
+  </header>
+
+  <section class="article">
+    <h2>Cone</h2>
+    <h3>A circular base tapering to a single apex</h3>
+    <hr>
+
+    <figure class="shape-figure">
+      <img src="cone.svg" width="300" height="240"
+           alt="Diagram of a cone with its key dimensions labeled" />
+      <figcaption>A cone with its principal measurements labeled.</figcaption>
+    </figure>
+
+    <h4>Description</h4>
+    <p>
+      A <strong>cone</strong> is a solid with a circular base that narrows
+      smoothly to a single point called the <strong>apex</strong>. In a right
+      circular cone the apex sits directly above the center of the base. The
+      distance from the apex straight down to the base center is the height
+      <strong>h</strong>; the distance from the apex along the surface to the edge
+      of the base is the <strong>slant height</strong> <strong>l</strong>.
+    </p>
+    <p>
+      Familiar cones include <strong>ice-cream cones</strong>, traffic cones,
+      funnels, and party hats.
+    </p>
+
+    <h4>Properties &amp; Measurements</h4>
+    <p>A cone is defined by the base radius <strong>r</strong> and height <strong>h</strong>; the slant height <strong>l</strong> follows from them.</p>
+    <table class="props">
+      <tr><th>Surfaces</th><td>1 flat circular base + 1 curved surface</td></tr>
+      <tr><th>Radius</th><td>r</td></tr>
+      <tr><th>Height</th><td>h (apex to base center)</td></tr>
+      <tr><th>Slant height</th><td>l = √(r² + h²)</td></tr>
+    </table>
+
+    <h4>Formulas</h4>
+    <p class="formula"><span class="label">Slant height</span> l = √(r² + h²)</p>
+    <p class="formula"><span class="label">Volume</span> V = (1⁄3)πr²h</p>
+    <p class="formula"><span class="label">Lateral SA</span> LSA = πrl</p>
+    <p class="formula"><span class="label">Total SA</span> SA = πr² + πrl = πr(r + l)</p>
+
+    <h4>Worked Example</h4>
+    <div class="example">
+      <p>Take a cone with radius <strong>r = 3</strong> and height <strong>h = 4</strong>.</p>
+      <p>l = √(r² + h²) = √(9 + 16) = √25 = <span class="result">5</span></p>
+      <p>V = (1⁄3)πr²h = (1⁄3)π(9)(4) = 12π ≈ <span class="result">37.70</span></p>
+      <p>LSA = πrl = π(3)(5) = 15π ≈ <span class="result">47.12</span></p>
+      <p>Total SA = πr(r + l) = π(3)(8) = 24π ≈ <span class="result">75.40</span></p>
+    </div>
+
+    <h4>Fun Fact</h4>
+    <div class="funfact">
+      <p>
+        A cone holds exactly one-third the volume of a cylinder with the same base
+        and height — so it takes three full cones of water to fill a matching can.
+      </p>
+    </div>
+  </section>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

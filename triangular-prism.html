@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G.S.R.S. - Triangular Prism</title>
+  <link href="article.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <h1>G.S.R.S.</h1>
+    <h2>Geometric Shapes Reference Site</h2>
+  </header>
+
+  <section class="article">
+    <h2>Triangular Prism</h2>
+    <h3>Two triangular bases joined by rectangles</h3>
+    <hr>
+
+    <figure class="shape-figure">
+      <img src="triangular-prism.svg" width="300" height="240"
+           alt="Diagram of a triangular prism with its key dimensions labeled" />
+      <figcaption>A triangular prism with its principal measurements labeled.</figcaption>
+    </figure>
+
+    <h4>Description</h4>
+    <p>
+      A <strong>triangular prism</strong> has two identical, parallel triangular
+      bases connected by three rectangular faces. Slide a triangle straight
+      through space and the solid it sweeps out is a triangular prism.
+    </p>
+    <p>
+      The classic example is a <strong>glass optical prism</strong> that splits
+      white light into a rainbow; you'll also recognize the shape in
+      Toblerone-style chocolate bars and many tent and roof profiles.
+    </p>
+
+    <h4>Properties &amp; Measurements</h4>
+    <p>Defined by the triangular base area <strong>B</strong>, the triangle's perimeter <strong>P</strong>, and the prism length <strong>L</strong>.</p>
+    <table class="props">
+      <tr><th>Faces</th><td>5 (2 triangles + 3 rectangles)</td></tr>
+      <tr><th>Edges</th><td>9</td></tr>
+      <tr><th>Vertices</th><td>6</td></tr>
+      <tr><th>Base area</th><td>B</td></tr>
+      <tr><th>Base perimeter</th><td>P</td></tr>
+      <tr><th>Length</th><td>L</td></tr>
+    </table>
+    <p>
+      As a polyhedron it satisfies <strong>Euler's formula</strong>:
+      V − E + F = 6 − 9 + 5 = 2.
+    </p>
+
+    <h4>Formulas</h4>
+    <p class="formula"><span class="label">Volume</span> V = B · L</p>
+    <p class="formula"><span class="label">Surface area</span> SA = 2B + P · L</p>
+    <p class="formula"><span class="label">Equilateral base</span> B = (√3⁄4)a², &nbsp; P = 3a</p>
+
+    <h4>Worked Example</h4>
+    <div class="example">
+      <p>Take a prism whose base is an equilateral triangle with side <strong>a = 4</strong>, and length <strong>L = 10</strong>.</p>
+      <p>B = (√3⁄4)a² = (√3⁄4)(16) = 4√3 ≈ 6.93</p>
+      <p>P = 3a = 12</p>
+      <p>V = B · L = 4√3 × 10 = 40√3 ≈ <span class="result">69.28</span></p>
+      <p>SA = 2B + P · L = 8√3 + 120 ≈ <span class="result">133.86</span></p>
+    </div>
+
+    <h4>Fun Fact</h4>
+    <div class="funfact">
+      <p>
+        When Isaac Newton passed sunlight through a triangular prism, he showed
+        that white light is actually a mixture of every color — a single glass
+        prism rewrote our understanding of light.
+      </p>
+    </div>
+  </section>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

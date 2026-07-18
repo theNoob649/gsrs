@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G.S.R.S. - Hexagonal Prism</title>
+  <link href="article.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <h1>G.S.R.S.</h1>
+    <h2>Geometric Shapes Reference Site</h2>
+  </header>
+
+  <section class="article">
+    <h2>Hexagonal Prism</h2>
+    <h3>Two hexagonal bases joined by rectangles</h3>
+    <hr>
+
+    <figure class="shape-figure">
+      <img src="hexagonal-prism.svg" width="300" height="240"
+           alt="Diagram of a hexagonal prism with base side a and height h labeled" />
+      <figcaption>A regular hexagonal prism, with base side <em>a</em> and height <em>h</em>.</figcaption>
+    </figure>
+
+    <h4>Description</h4>
+    <p>
+      A <strong>hexagonal prism</strong> has two identical, parallel hexagonal
+      bases connected by six rectangular faces. When the bases are regular
+      hexagons and the sides are perpendicular to them, it is a
+      <em>right regular hexagonal prism</em> — the form modelled by the wooden
+      block in this set.
+    </p>
+    <p>
+      Real-world hexagonal prisms include ordinary <strong>pencils</strong>,
+      metal <strong>nuts</strong> that thread onto bolts, and the cells of a
+      <strong>honeycomb</strong>, which pack together with no wasted space.
+    </p>
+
+    <h4>Properties &amp; Measurements</h4>
+    <p>A right regular hexagonal prism is defined by the base side <strong>a</strong> and the height <strong>h</strong>.</p>
+    <table class="props">
+      <tr><th>Faces</th><td>8 (2 hexagons + 6 rectangles)</td></tr>
+      <tr><th>Edges</th><td>18</td></tr>
+      <tr><th>Vertices</th><td>12</td></tr>
+      <tr><th>Base side</th><td>a</td></tr>
+      <tr><th>Height</th><td>h</td></tr>
+    </table>
+    <p>
+      As a polyhedron it satisfies <strong>Euler's formula</strong>:
+      V − E + F = 12 − 18 + 8 = 2.
+    </p>
+
+    <h4>Formulas</h4>
+    <p class="formula"><span class="label">Base area</span> B = (3√3⁄2)a²</p>
+    <p class="formula"><span class="label">Base perimeter</span> P = 6a</p>
+    <p class="formula"><span class="label">Volume</span> V = B·h = (3√3⁄2)a²h</p>
+    <p class="formula"><span class="label">Lateral SA</span> LSA = P·h = 6ah</p>
+    <p class="formula"><span class="label">Total SA</span> SA = 2B + 6ah = 3√3·a² + 6ah</p>
+
+    <h4>Worked Example</h4>
+    <div class="example">
+      <p>Take a hexagonal prism with base side <strong>a = 4</strong> and height <strong>h = 10</strong>.</p>
+      <p>B = (3√3⁄2)a² = (3√3⁄2)(16) = 24√3 ≈ 41.57</p>
+      <p>V = B·h = 24√3 × 10 ≈ <span class="result">415.69</span></p>
+      <p>LSA = 6ah = 6 × 4 × 10 = <span class="result">240</span></p>
+      <p>Total SA = 2B + 6ah = 48√3 + 240 ≈ <span class="result">323.14</span></p>
+    </div>
+
+    <h4>Fun Fact</h4>
+    <div class="funfact">
+      <p>
+        Bees build honeycomb from hexagonal prisms because the hexagon tiles a
+        plane with the least wall material for the most storage — a natural
+        solution to a problem mathematicians call the "honeycomb conjecture,"
+        proven only in 1999.
+      </p>
+    </div>
+  </section>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

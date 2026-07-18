@@ -1,0 +1,148 @@
+/* ==========================================================================
+   G.S.R.S. — style.css
+   Home page ("chrome"). Clean, professional, encyclopedia-inspired light
+   theme. System fonts only — no external dependencies.
+   ========================================================================== */
+
+:root {
+  --page-bg:  #f6f7f9;   /* area around the content column   */
+  --content:  #ffffff;   /* article/content surface          */
+  --text:     #1e2126;   /* body text                        */
+  --muted:    #5a6472;   /* subtitles, captions              */
+  --heading:  #16202c;   /* dark heading ink                 */
+  --link:     #2f5aa8;   /* encyclopedia blue                */
+  --link-hov: #17457f;
+  --rule:     #c7cdd6;   /* section-heading underline        */
+  --rule-lt:  #e6e9ee;   /* faint dividers                   */
+  --accent:   #2f5aa8;
+
+  --serif: Georgia, 'Times New Roman', 'Iowan Old Style', serif;
+  --sans:  -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover, a:focus { color: var(--link-hov); text-decoration: underline; }
+
+/* ---- Header ---------------------------------------------------------------
+   A restrained top banner: wordmark left, tagline beneath. No nav bar. */
+header {
+  background: var(--content);
+  border-bottom: 1px solid var(--rule);
+  padding: 20px 24px 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+  color: var(--heading);
+}
+
+header h2 {
+  margin: 2px 0 0;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* ---- Content column ------------------------------------------------------- */
+.content {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 34px 40px 48px;
+  background: var(--content);
+  border: 1px solid var(--rule-lt);
+  border-radius: 4px;
+}
+
+.content h2 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--heading);
+  margin: 30px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.content h2:first-of-type { margin-top: 0; }
+
+.content h3 {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--text);
+  margin: 0 0 14px;
+}
+
+.content p { margin: 0 0 14px; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule-lt);
+  margin: 24px 0;
+}
+
+/* ---- Shape index (home) — multi-column list of links ---------------------- */
+.shape-links {
+  columns: 3 200px;
+  column-gap: 34px;
+  margin-top: 18px;
+}
+
+.shape-links a {
+  display: block;
+  padding: 7px 0 7px 16px;
+  border-bottom: 1px solid var(--rule-lt);
+  position: relative;
+  break-inside: avoid;
+  color: var(--link);
+}
+
+.shape-links a::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+  font-size: 0.8em;
+}
+
+.shape-links a:hover,
+.shape-links a:focus { text-decoration: none; color: var(--link-hov); }
+.shape-links a:hover::before { color: var(--accent); }
+
+/* ---- Footer --------------------------------------------------------------- */
+footer {
+  flex-shrink: 0;
+  background: var(--content);
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  padding: 16px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+footer p { margin: 0; }
+
+/* ---- Responsive ----------------------------------------------------------- */
+@media (max-width: 640px) {
+  .content { margin: 0; border-radius: 0; padding: 26px 20px 40px; }
+  .shape-links { columns: 1; }
+}

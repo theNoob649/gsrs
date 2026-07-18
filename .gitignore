@@ -1,0 +1,9 @@
+# Personal reference photos — not for the public site
+shape-refrences/
+
+# Unused scratch file
+app.py
+
+# Local render/screenshot scratch
+_*.png
+_*.html

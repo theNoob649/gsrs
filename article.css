@@ -1,0 +1,259 @@
+/* ==========================================================================
+   G.S.R.S. — article.css
+   Individual shape article pages. Encyclopedia-style light theme with a
+   floated lead diagram, "wikitable" measurements, and boxed formulas.
+   System fonts only — no external dependencies.
+   ========================================================================== */
+
+:root {
+  --page-bg:  #f6f7f9;
+  --content:  #ffffff;
+  --text:     #1e2126;
+  --muted:    #5a6472;
+  --heading:  #16202c;
+  --link:     #2f5aa8;
+  --link-hov: #17457f;
+  --rule:     #c7cdd6;
+  --rule-lt:  #e6e9ee;
+  --accent:   #2f5aa8;
+  --box-bg:   #f4f6f9;
+  --formula-bg: #f1f5fb;
+
+  --serif: Georgia, 'Times New Roman', 'Iowan Old Style', serif;
+  --sans:  -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono:  'Cascadia Code', Consolas, 'SFMono-Regular', Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover, a:focus { color: var(--link-hov); text-decoration: underline; }
+
+/* ---- Header (no nav) ------------------------------------------------------ */
+header {
+  background: var(--content);
+  border-bottom: 1px solid var(--rule);
+  padding: 20px 24px 16px;
+}
+header h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+  color: var(--heading);
+}
+header h2 {
+  margin: 2px 0 0;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* ---- Article panel -------------------------------------------------------- */
+.article {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 34px 44px 44px;
+  background: var(--content);
+  border: 1px solid var(--rule-lt);
+  border-radius: 4px;
+}
+
+/* Article title (the shape name) — serif, like an encyclopedia entry */
+.article > h2 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--heading);
+  margin: 0 0 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Tagline / classification */
+.article > h3 {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.article > hr {
+  border: none;
+  border-top: 1px solid var(--rule-lt);
+  margin: 14px 0 20px;
+}
+
+/* Section headings — the signature underlined encyclopedia heading */
+.article h4 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--heading);
+  margin: 30px 0 12px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--rule);
+  clear: none;
+}
+
+.article p { margin: 0 0 14px; }
+.article ul { margin: 0 0 14px; padding-left: 22px; }
+.article li { margin: 4px 0; }
+.article em { color: inherit; }
+.article strong { color: var(--heading); }
+
+/* ---- Lead diagram (floated right, like a Wikipedia thumbnail) ------------- */
+.shape-figure {
+  float: right;
+  width: 300px;
+  max-width: 46%;
+  margin: 4px 0 16px 24px;
+  padding: 10px;
+  background: var(--box-bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.shape-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border: 1px solid var(--rule-lt);
+  border-radius: 3px;
+}
+.shape-figure figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--muted);
+  text-align: left;
+}
+
+/* ---- Measurements table ("wikitable" look) -------------------------------- */
+.props {
+  border-collapse: collapse;
+  margin: 8px 0 16px;
+  min-width: 320px;
+  max-width: 100%;
+}
+.props th, .props td {
+  text-align: left;
+  padding: 7px 14px;
+  border: 1px solid var(--rule);
+}
+.props th {
+  background: var(--box-bg);
+  color: var(--heading);
+  font-weight: 600;
+  width: 45%;
+}
+
+/* ---- Formula blocks ------------------------------------------------------- */
+.formula {
+  font-family: var(--mono);
+  font-size: 1rem;
+  background: var(--formula-bg);
+  color: #14315e;
+  border: 1px solid #d5e0f0;
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  padding: 10px 16px;
+  margin: 8px 0;
+  overflow-x: auto;
+}
+.formula .label {
+  display: inline-block;
+  min-width: 132px;
+  color: var(--accent);
+  font-weight: 700;
+  font-family: var(--sans);
+}
+
+/* ---- Worked example ------------------------------------------------------- */
+.example {
+  background: var(--box-bg);
+  border: 1px solid var(--rule-lt);
+  border-left: 4px solid var(--muted);
+  border-radius: 4px;
+  padding: 14px 20px;
+  margin: 12px 0;
+}
+.example p { margin: 6px 0; }
+.example .result { color: #17457f; font-weight: 700; }
+
+/* ---- Fun fact ------------------------------------------------------------- */
+.funfact {
+  background: #f0f5ff;
+  border: 1px solid #d5e0f0;
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  padding: 12px 18px;
+  margin: 12px 0 0;
+}
+.funfact p { margin: 0; }
+
+/* ---- Back button ---------------------------------------------------------- */
+.back-button-container {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 8px 16px 40px;
+}
+.back-button {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--link);
+  background: var(--content);
+  border: 1px solid var(--rule);
+  padding: 9px 22px;
+  border-radius: 4px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.back-button::before { content: "← "; }
+.back-button:hover,
+.back-button:focus {
+  text-decoration: none;
+  background: var(--box-bg);
+  border-color: var(--accent);
+}
+
+/* ---- Footer --------------------------------------------------------------- */
+footer {
+  flex-shrink: 0;
+  background: var(--content);
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  padding: 16px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+footer p { margin: 0; }
+
+/* ---- Responsive ----------------------------------------------------------- */
+@media (max-width: 680px) {
+  .article { margin: 0; border-radius: 0; padding: 24px 20px 36px; }
+  .article > h2 { font-size: 1.6rem; }
+  .shape-figure {
+    float: none;
+    width: 100%;
+    max-width: 340px;
+    margin: 8px auto 20px;
+  }
+  .props, .props th { width: auto; min-width: 0; }
+}

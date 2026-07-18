@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G.S.R.S. - Ellipsoid</title>
+  <link href="article.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <h1>G.S.R.S.</h1>
+    <h2>Geometric Shapes Reference Site</h2>
+  </header>
+
+  <section class="article">
+    <h2>Ellipsoid</h2>
+    <h3>A stretched or squashed sphere</h3>
+    <hr>
+
+    <figure class="shape-figure">
+      <img src="ellipsoid.svg" width="300" height="240"
+           alt="Diagram of an ellipsoid with its key dimensions labeled" />
+      <figcaption>An ellipsoid with its principal measurements labeled.</figcaption>
+    </figure>
+
+    <h4>Description</h4>
+    <p>
+      An <strong>ellipsoid</strong> is a smooth, closed surface that looks like a
+      sphere stretched or squashed along its axes. It is described by three
+      <strong>semi-axes</strong> — <strong>a</strong>, <strong>b</strong>, and
+      <strong>c</strong> — the distances from the center to the surface along each
+      of the three perpendicular directions. When all three are equal
+      (a = b = c) the ellipsoid is simply a sphere.
+    </p>
+    <p>
+      Real-world ellipsoids include a <strong>rugby or American football</strong>,
+      an egg (roughly), M&amp;M candies, and — on a planetary scale — the Earth
+      itself, which bulges slightly at the equator.
+    </p>
+
+    <h4>Properties &amp; Measurements</h4>
+    <p>An ellipsoid is a curved solid defined by three semi-axes <strong>a, b, c</strong>.</p>
+    <table class="props">
+      <tr><th>Surface</th><td>1 smooth curved surface</td></tr>
+      <tr><th>Semi-axes</th><td>a, b, c (center to surface along each axis)</td></tr>
+      <tr><th>Special case</th><td>a = b = c → sphere</td></tr>
+    </table>
+
+    <h4>Formulas</h4>
+    <p class="formula"><span class="label">Volume</span> V = (4⁄3)πabc</p>
+    <p class="formula"><span class="label">Surface area</span> SA ≈ 4π · [ ( aᵖbᵖ + aᵖcᵖ + bᵖcᵖ ) ⁄ 3 ]<sup>(1⁄p)</sup></p>
+    <p class="formula"><span class="label">with</span> p ≈ 1.6075 &nbsp;(Thomsen approximation)</p>
+    <p>
+      Unlike the sphere, an ellipsoid has <strong>no simple exact formula</strong>
+      for surface area; the Thomsen formula above is a close approximation. Setting
+      a = b = c recovers the exact sphere result, SA = 4πr².
+    </p>
+
+    <h4>Worked Example</h4>
+    <div class="example">
+      <p>Take an ellipsoid with semi-axes <strong>a = 3, b = 2, c = 1</strong>.</p>
+      <p>V = (4⁄3)πabc = (4⁄3)π(3)(2)(1) = 8π ≈ <span class="result">25.13</span></p>
+      <p>With p = 1.6075: aᵖ ≈ 5.847, bᵖ ≈ 3.048, cᵖ = 1</p>
+      <p>(aᵖbᵖ + aᵖcᵖ + bᵖcᵖ)⁄3 = (17.82 + 5.85 + 3.05)⁄3 ≈ 8.904</p>
+      <p>SA ≈ 4π × 8.904<sup>(1⁄1.6075)</sup> ≈ 4π × 3.897 ≈ <span class="result">48.97</span></p>
+    </div>
+
+    <h4>Fun Fact</h4>
+    <div class="funfact">
+      <p>
+        Earth is not a perfect sphere but an <em>oblate ellipsoid</em> — spinning
+        makes it bulge at the equator, so the planet is about 43 km wider across
+        the equator than from pole to pole.
+      </p>
+    </div>
+  </section>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

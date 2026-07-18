@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240" role="img" width="300" height="240">
+<defs><radialGradient id="sph" cx="38%" cy="32%" r="72%"><stop offset="0%" stop-color="#dce9f8"/><stop offset="70%" stop-color="#a9c8ec"/><stop offset="100%" stop-color="#7ba7db"/></radialGradient></defs><circle cx="150.0" cy="120.0" r="82" fill="url(#sph)" stroke="#2b4d74" stroke-width="1.6"/>
+<path d="M 68.0 120.0 A 82 27.880000000000003 0 0 0 232.0 120.0" fill="none" stroke="#2b4d74" stroke-width="1.4"/>
+<path d="M 68.0 120.0 A 82 27.880000000000003 0 0 1 232.0 120.0" fill="none" stroke="#9fb4cc" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="150.0" y1="120.0" x2="232.0" y2="120.0" stroke="#b23b3b" stroke-width="1.3"/>
+<circle cx="150.0" cy="120.0" r="2.4" fill="#b23b3b"/>
+<text x="191.0" y="108.0" fill="#b23b3b" font-family="Georgia, serif" font-style="italic" font-size="16" text-anchor="middle" dominant-baseline="middle">r</text>
+</svg>
