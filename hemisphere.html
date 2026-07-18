@@ -4,32 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Hemisphere</title>
-  <link href="article.css?v=4" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=4">
+  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=5">
+  <script src="viewer.js?v=5" defer></script>
+  <script src="article.js?v=5" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=4" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
       </span>
     </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
   </header>
 
   <section class="article">
     <h2>Hemisphere</h2>
-    <h3>Exactly half of a sphere</h3>
+    <h3>Half of a ball — a dome</h3>
     <hr>
 
     <figure class="shape-figure">
-      <img src="hemisphere.svg" width="300" height="240"
-           alt="Diagram of a hemisphere with its key dimensions labeled" />
-      <figcaption>A hemisphere with its principal measurements labeled.</figcaption>
+      <canvas class="shape-viewer" data-shape="hemisphere" width="360" height="330"
+              aria-label="Interactive 3D model of a hemisphere. Drag to rotate."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
     </figure>
 
-    <h4>Description</h4>
+    <h4>What Is It?</h4>
     <p>
       A <strong>hemisphere</strong> is what you get when you slice a sphere
       cleanly through its center: half of the round solid, capped by a flat
@@ -41,7 +53,7 @@
       half an orange, and planetariums.
     </p>
 
-    <h4>Properties &amp; Measurements</h4>
+    <h4>Parts &amp; Sizes</h4>
     <p>A hemisphere is a curved solid defined by its radius <strong>r</strong>.</p>
     <table class="props">
       <tr><th>Surfaces</th><td>1 curved surface + 1 flat circular base</td></tr>
@@ -54,7 +66,7 @@
     <p class="formula"><span class="label">Curved SA</span> CSA = 2πr²</p>
     <p class="formula"><span class="label">Total SA</span> SA = 3πr² &nbsp;(curved + flat base)</p>
 
-    <h4>Worked Example</h4>
+    <h4>Let's Try It!</h4>
     <div class="example">
       <p>Take a hemisphere with radius <strong>r = 3</strong>.</p>
       <p>V = (2⁄3)πr³ = (2⁄3)π(27) = 18π ≈ <span class="result">56.55</span></p>
@@ -62,7 +74,7 @@
       <p>Total SA = 3πr² = 3π(9) = 27π ≈ <span class="result">84.82</span></p>
     </div>
 
-    <h4>Fun Fact</h4>
+    <h4>Cool Fact</h4>
     <div class="funfact">
       <p>
         The dome — a hemisphere in architecture — is remarkably strong because it

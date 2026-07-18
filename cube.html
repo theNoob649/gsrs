@@ -4,37 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Cube</title>
-  <link href="article.css?v=4" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=4">
+  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=5">
+  <script src="viewer.js?v=5" defer></script>
+  <script src="article.js?v=5" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=4" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
       </span>
     </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
   </header>
 
   <section class="article">
     <h2>Cube</h2>
-    <h3>Regular hexahedron — a Platonic solid</h3>
+    <h3>A box with six equal square sides</h3>
     <hr>
 
     <figure class="shape-figure">
-      <img src="cube.svg" width="300" height="240"
-           alt="Diagram of a cube with its key dimensions labeled" />
-      <figcaption>A cube with its principal measurements labeled.</figcaption>
+      <canvas class="shape-viewer" data-shape="cube" width="360" height="330"
+              aria-label="Interactive 3D model of a cube. Drag to rotate."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
     </figure>
 
-    <h4>Description</h4>
+    <h4>What Is It?</h4>
     <p>
-      A <strong>cube</strong> is a solid bounded by six identical square faces
-      that meet at right angles. Every edge has the same length, and every corner
-      is a right angle, which makes it the most symmetric of the six-faced solids
-      (a regular hexahedron). It is one of the five Platonic solids.
+      A <strong>cube</strong> is a solid with six square faces that are all exactly
+      the same size. Every edge is the same length and every corner is a square
+      corner (a right angle). That makes the cube one of the most perfectly even
+      shapes there is — a dice is a cube you probably already know.
     </p>
     <p>
       Cubes are everywhere in daily life: gaming <strong>dice</strong>, sugar
@@ -42,7 +54,7 @@
       building blocks children stack are all cubes or very close to it.
     </p>
 
-    <h4>Properties &amp; Measurements</h4>
+    <h4>Parts &amp; Sizes</h4>
     <p>The cube is defined by a single measurement — its side length <strong>s</strong>.</p>
     <table class="props">
       <tr><th>Faces</th><td>6 (all squares)</td></tr>
@@ -51,8 +63,7 @@
       <tr><th>Side length</th><td>s</td></tr>
     </table>
     <p>
-      As a polyhedron it satisfies <strong>Euler's formula</strong>:
-      V − E + F = 8 − 12 + 6 = 2.
+      Like every flat-sided shape, it follows <strong>Euler's rule</strong> — corners − edges + faces = 8 − 12 + 6 = 2.
     </p>
 
     <h4>Formulas</h4>
@@ -61,7 +72,7 @@
     <p class="formula"><span class="label">Face diagonal</span> d = s√2</p>
     <p class="formula"><span class="label">Space diagonal</span> D = s√3</p>
 
-    <h4>Worked Example</h4>
+    <h4>Let's Try It!</h4>
     <div class="example">
       <p>Take a cube with side <strong>s = 4</strong>.</p>
       <p>V = s³ = 4³ = <span class="result">64</span></p>
@@ -70,7 +81,7 @@
       <p>Space diagonal = s√3 = 4√3 ≈ <span class="result">6.93</span></p>
     </div>
 
-    <h4>Fun Fact</h4>
+    <h4>Cool Fact</h4>
     <div class="funfact">
       <p>
         The cube is the only Platonic solid that tiles 3D space perfectly with no

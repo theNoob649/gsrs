@@ -4,32 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Square Pyramid</title>
-  <link href="article.css?v=4" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=4">
+  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=5">
+  <script src="viewer.js?v=5" defer></script>
+  <script src="article.js?v=5" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=4" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
       </span>
     </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
   </header>
 
   <section class="article">
     <h2>Square Pyramid</h2>
-    <h3>A square base with four triangular faces</h3>
+    <h3>A square base that rises to a point</h3>
     <hr>
 
     <figure class="shape-figure">
-      <img src="square-pyramid.svg" width="300" height="240"
-           alt="Diagram of a square pyramid with its key dimensions labeled" />
-      <figcaption>A square pyramid with its principal measurements labeled.</figcaption>
+      <canvas class="shape-viewer" data-shape="square-pyramid" width="360" height="330"
+              aria-label="Interactive 3D model of a square pyramid. Drag to rotate."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
     </figure>
 
-    <h4>Description</h4>
+    <h4>What Is It?</h4>
     <p>
       A <strong>square pyramid</strong> has a square base and four triangular
       faces that rise to meet at a single apex. When the apex sits directly above
@@ -43,7 +55,7 @@
       you'll also see the shape in some rooftops, tent tops, and paperweights.
     </p>
 
-    <h4>Properties &amp; Measurements</h4>
+    <h4>Parts &amp; Sizes</h4>
     <p>A square pyramid is defined by the base side <strong>a</strong> and height <strong>h</strong>.</p>
     <table class="props">
       <tr><th>Faces</th><td>5 (1 square + 4 triangles)</td></tr>
@@ -53,8 +65,7 @@
       <tr><th>Slant height</th><td>l = √(h² + (a⁄2)²)</td></tr>
     </table>
     <p>
-      As a polyhedron it satisfies <strong>Euler's formula</strong>:
-      V − E + F = 5 − 8 + 5 = 2.
+      Like every flat-sided shape, it follows <strong>Euler's rule</strong> — corners − edges + faces = 5 − 8 + 5 = 2.
     </p>
 
     <h4>Formulas</h4>
@@ -63,7 +74,7 @@
     <p class="formula"><span class="label">Lateral SA</span> LSA = 2a·l</p>
     <p class="formula"><span class="label">Total SA</span> SA = a² + 2a·l</p>
 
-    <h4>Worked Example</h4>
+    <h4>Let's Try It!</h4>
     <div class="example">
       <p>Take a square pyramid with base side <strong>a = 6</strong> and height <strong>h = 4</strong>.</p>
       <p>l = √(h² + (a⁄2)²) = √(16 + 9) = √25 = <span class="result">5</span></p>
@@ -72,7 +83,7 @@
       <p>Total SA = a² + 2a·l = 36 + 60 = <span class="result">96</span></p>
     </div>
 
-    <h4>Fun Fact</h4>
+    <h4>Cool Fact</h4>
     <div class="funfact">
       <p>
         The Great Pyramid of Giza stood as the tallest human-made structure on

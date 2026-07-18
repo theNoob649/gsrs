@@ -4,32 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Sphere</title>
-  <link href="article.css?v=4" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=4">
+  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=5">
+  <script src="viewer.js?v=5" defer></script>
+  <script src="article.js?v=5" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=4" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
       </span>
     </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
   </header>
 
   <section class="article">
     <h2>Sphere</h2>
-    <h3>A perfectly round curved solid</h3>
+    <h3>A perfectly round ball</h3>
     <hr>
 
     <figure class="shape-figure">
-      <img src="sphere.svg" width="300" height="240"
-           alt="Diagram of a sphere with its key dimensions labeled" />
-      <figcaption>A sphere with its principal measurements labeled.</figcaption>
+      <canvas class="shape-viewer" data-shape="sphere" width="360" height="330"
+              aria-label="Interactive 3D model of a sphere. Drag to rotate."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
     </figure>
 
-    <h4>Description</h4>
+    <h4>What Is It?</h4>
     <p>
       A <strong>sphere</strong> is the set of all points in space that are the
       same distance — the <strong>radius</strong> — from a single center point.
@@ -43,7 +55,7 @@
       pulls into round shapes.
     </p>
 
-    <h4>Properties &amp; Measurements</h4>
+    <h4>Parts &amp; Sizes</h4>
     <p>A sphere is a curved solid defined entirely by its radius <strong>r</strong>.</p>
     <table class="props">
       <tr><th>Faces / Edges / Vertices</th><td>none (a single smooth surface)</td></tr>
@@ -57,7 +69,7 @@
     <p class="formula"><span class="label">Diameter</span> d = 2r</p>
     <p class="formula"><span class="label">Great circle</span> C = 2πr</p>
 
-    <h4>Worked Example</h4>
+    <h4>Let's Try It!</h4>
     <div class="example">
       <p>Take a sphere with radius <strong>r = 3</strong>.</p>
       <p>V = (4⁄3)πr³ = (4⁄3)π(27) = 36π ≈ <span class="result">113.10</span></p>
@@ -66,7 +78,7 @@
       <p>Great-circle circumference = 2πr = 6π ≈ <span class="result">18.85</span></p>
     </div>
 
-    <h4>Fun Fact</h4>
+    <h4>Cool Fact</h4>
     <div class="funfact">
       <p>
         Of all shapes that enclose a given volume, the sphere has the smallest

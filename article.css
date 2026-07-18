@@ -50,9 +50,20 @@ header {
   background: var(--content);
   border-bottom: 1px solid var(--rule);
   box-shadow: var(--shadow-sm);
-  padding: 16px 28px;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 20px;
+  flex-wrap: wrap;
 }
 .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
+.topnav { display: flex; gap: 6px; }
+.topnav a {
+  font-weight: 600; color: var(--muted); padding: 8px 18px; border-radius: 8px;
+}
+.topnav a:hover, .topnav a:focus { color: var(--link); background: #eef2f8; text-decoration: none; }
+.topnav a.active { color: var(--link); background: #e6eefb; }
 .brand:hover { text-decoration: none; }
 .brand-logo { display: block; width: 44px; height: 44px; flex-shrink: 0; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
@@ -128,20 +139,53 @@ header {
   border-radius: 10px;
   box-shadow: var(--shadow-sm);
 }
-.shape-figure img {
+.shape-viewer {
   display: block;
   width: 100%;
   height: auto;
-  background: #fff;
+  background: radial-gradient(circle at 50% 40%, #ffffff, #eef2f7);
   border: 1px solid var(--rule-lt);
-  border-radius: 6px;
+  border-radius: 8px;
+  cursor: grab;
+  touch-action: none;   /* let drag rotate instead of scrolling on touch */
 }
-.shape-figure figcaption {
-  margin-top: 10px;
-  font-size: 0.85rem;
-  line-height: 1.45;
+.shape-viewer:active { cursor: grabbing; }
+
+.viewer-controls { margin-top: 10px; }
+.viewer-hint {
+  display: block;
+  font-size: 0.82rem;
   color: var(--muted);
-  text-align: left;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.measure-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+.measure-buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+.measure-btn {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--link);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 5px 13px;
+  cursor: pointer;
+  transition: background .12s ease, border-color .12s ease, color .12s ease;
+}
+.measure-btn:hover { border-color: var(--accent); background: #f2f6fd; }
+.measure-btn.on {
+  background: #e2571f;
+  border-color: #e2571f;
+  color: #fff;
 }
 
 /* ---- Measurements table ("wikitable") ------------------------------------- */

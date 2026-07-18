@@ -4,32 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Ellipsoid</title>
-  <link href="article.css?v=4" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=4">
+  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=5">
+  <script src="viewer.js?v=5" defer></script>
+  <script src="article.js?v=5" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=4" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
       </span>
     </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
   </header>
 
   <section class="article">
     <h2>Ellipsoid</h2>
-    <h3>A stretched or squashed sphere</h3>
+    <h3>A stretched ball — like an egg</h3>
     <hr>
 
     <figure class="shape-figure">
-      <img src="ellipsoid.svg" width="300" height="240"
-           alt="Diagram of an ellipsoid with its key dimensions labeled" />
-      <figcaption>An ellipsoid with its principal measurements labeled.</figcaption>
+      <canvas class="shape-viewer" data-shape="ellipsoid" width="360" height="330"
+              aria-label="Interactive 3D model of a ellipsoid. Drag to rotate."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
     </figure>
 
-    <h4>Description</h4>
+    <h4>What Is It?</h4>
     <p>
       An <strong>ellipsoid</strong> is a smooth, closed surface that looks like a
       sphere stretched or squashed along its axes. It is described by three
@@ -44,7 +56,7 @@
       itself, which bulges slightly at the equator.
     </p>
 
-    <h4>Properties &amp; Measurements</h4>
+    <h4>Parts &amp; Sizes</h4>
     <p>An ellipsoid is a curved solid defined by three semi-axes <strong>a, b, c</strong>.</p>
     <table class="props">
       <tr><th>Surface</th><td>1 smooth curved surface</td></tr>
@@ -62,7 +74,7 @@
       a = b = c recovers the exact sphere result, SA = 4πr².
     </p>
 
-    <h4>Worked Example</h4>
+    <h4>Let's Try It!</h4>
     <div class="example">
       <p>Take an ellipsoid with semi-axes <strong>a = 3, b = 2, c = 1</strong>.</p>
       <p>V = (4⁄3)πabc = (4⁄3)π(3)(2)(1) = 8π ≈ <span class="result">25.13</span></p>
@@ -71,7 +83,7 @@
       <p>SA ≈ 4π × 8.904<sup>(1⁄1.6075)</sup> ≈ 4π × 3.897 ≈ <span class="result">48.97</span></p>
     </div>
 
-    <h4>Fun Fact</h4>
+    <h4>Cool Fact</h4>
     <div class="funfact">
       <p>
         Earth is not a perfect sphere but an <em>oblate ellipsoid</em> — spinning

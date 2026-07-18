@@ -4,32 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Cylinder</title>
-  <link href="article.css?v=4" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=4">
+  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=5">
+  <script src="viewer.js?v=5" defer></script>
+  <script src="article.js?v=5" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=4" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
       </span>
     </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
   </header>
 
   <section class="article">
     <h2>Cylinder</h2>
-    <h3>Two circular bases joined by a curved side</h3>
+    <h3>A round tube with flat ends — like a can</h3>
     <hr>
 
     <figure class="shape-figure">
-      <img src="cylinder.svg" width="300" height="240"
-           alt="Diagram of a cylinder with its key dimensions labeled" />
-      <figcaption>A cylinder with its principal measurements labeled.</figcaption>
+      <canvas class="shape-viewer" data-shape="cylinder" width="360" height="330"
+              aria-label="Interactive 3D model of a cylinder. Drag to rotate."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
     </figure>
 
-    <h4>Description</h4>
+    <h4>What Is It?</h4>
     <p>
       A <strong>cylinder</strong> is a solid with two parallel circular bases of
       equal size, connected by a single curved surface. In a right circular
@@ -41,7 +53,7 @@
       batteries, candles, and drinking glasses.
     </p>
 
-    <h4>Properties &amp; Measurements</h4>
+    <h4>Parts &amp; Sizes</h4>
     <p>A cylinder is defined by the base radius <strong>r</strong> and the height <strong>h</strong>.</p>
     <table class="props">
       <tr><th>Surfaces</th><td>2 flat circular bases + 1 curved side</td></tr>
@@ -55,7 +67,7 @@
     <p class="formula"><span class="label">Total SA</span> SA = 2πr² + 2πrh = 2πr(r + h)</p>
     <p class="formula"><span class="label">Base circ.</span> C = 2πr</p>
 
-    <h4>Worked Example</h4>
+    <h4>Let's Try It!</h4>
     <div class="example">
       <p>Take a cylinder with radius <strong>r = 3</strong> and height <strong>h = 7</strong>.</p>
       <p>V = πr²h = π(9)(7) = 63π ≈ <span class="result">197.92</span></p>
@@ -64,7 +76,7 @@
       <p>Base circumference = 2πr = 6π ≈ <span class="result">18.85</span></p>
     </div>
 
-    <h4>Fun Fact</h4>
+    <h4>Cool Fact</h4>
     <div class="funfact">
       <p>
         Unroll a cylinder's curved side and it flattens into a plain rectangle

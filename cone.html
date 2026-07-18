@@ -4,32 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Cone</title>
-  <link href="article.css?v=4" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=4">
+  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=5">
+  <script src="viewer.js?v=5" defer></script>
+  <script src="article.js?v=5" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=4" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
       </span>
     </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
   </header>
 
   <section class="article">
     <h2>Cone</h2>
-    <h3>A circular base tapering to a single apex</h3>
+    <h3>A round base that rises to a point</h3>
     <hr>
 
     <figure class="shape-figure">
-      <img src="cone.svg" width="300" height="240"
-           alt="Diagram of a cone with its key dimensions labeled" />
-      <figcaption>A cone with its principal measurements labeled.</figcaption>
+      <canvas class="shape-viewer" data-shape="cone" width="360" height="330"
+              aria-label="Interactive 3D model of a cone. Drag to rotate."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
     </figure>
 
-    <h4>Description</h4>
+    <h4>What Is It?</h4>
     <p>
       A <strong>cone</strong> is a solid with a circular base that narrows
       smoothly to a single point called the <strong>apex</strong>. In a right
@@ -43,7 +55,7 @@
       funnels, and party hats.
     </p>
 
-    <h4>Properties &amp; Measurements</h4>
+    <h4>Parts &amp; Sizes</h4>
     <p>A cone is defined by the base radius <strong>r</strong> and height <strong>h</strong>; the slant height <strong>l</strong> follows from them.</p>
     <table class="props">
       <tr><th>Surfaces</th><td>1 flat circular base + 1 curved surface</td></tr>
@@ -58,7 +70,7 @@
     <p class="formula"><span class="label">Lateral SA</span> LSA = πrl</p>
     <p class="formula"><span class="label">Total SA</span> SA = πr² + πrl = πr(r + l)</p>
 
-    <h4>Worked Example</h4>
+    <h4>Let's Try It!</h4>
     <div class="example">
       <p>Take a cone with radius <strong>r = 3</strong> and height <strong>h = 4</strong>.</p>
       <p>l = √(r² + h²) = √(9 + 16) = √25 = <span class="result">5</span></p>
@@ -67,7 +79,7 @@
       <p>Total SA = πr(r + l) = π(3)(8) = 24π ≈ <span class="result">75.40</span></p>
     </div>
 
-    <h4>Fun Fact</h4>
+    <h4>Cool Fact</h4>
     <div class="funfact">
       <p>
         A cone holds exactly one-third the volume of a cylinder with the same base
