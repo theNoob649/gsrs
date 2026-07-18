@@ -1,23 +1,25 @@
 /* ==========================================================================
-   G.S.R.S. — article.css
-   Individual shape article pages. Encyclopedia-style light theme with a
-   floated lead diagram, "wikitable" measurements, and boxed formulas.
-   System fonts only — no external dependencies.
+   G.S.R.S. — article.css  (individual shape article pages)
+   Encyclopedia-style light theme: branded header, floated lead diagram,
+   "wikitable" measurements, boxed formulas. System fonts only.
    ========================================================================== */
 
 :root {
   --page-bg:  #e4e7ec;
   --content:  #ffffff;
-  --text:     #1e2126;
+  --text:     #23282f;
   --muted:    #5a6472;
   --heading:  #16202c;
   --link:     #2f5aa8;
   --link-hov: #17457f;
-  --rule:     #c7cdd6;
-  --rule-lt:  #e6e9ee;
+  --rule:     #d3d8e0;
+  --rule-lt:  #e8ebf0;
   --accent:   #2f5aa8;
   --box-bg:   #f4f6f9;
   --formula-bg: #f1f5fb;
+
+  --shadow-sm: 0 1px 2px rgba(16,24,40,.05);
+  --shadow-lg: 0 1px 3px rgba(16,24,40,.06), 0 12px 34px rgba(16,24,40,.06);
 
   --serif: Georgia, 'Times New Roman', 'Iowan Old Style', serif;
   --sans:  -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -35,100 +37,96 @@ body {
   background: var(--page-bg);
   color: var(--text);
   font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 16.5px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
 }
 
 a { color: var(--link); text-decoration: none; }
 a:hover, a:focus { color: var(--link-hov); text-decoration: underline; }
 
-/* ---- Header (no nav) ------------------------------------------------------ */
+/* ---- Brand header --------------------------------------------------------- */
 header {
   background: var(--content);
   border-bottom: 1px solid var(--rule);
-  padding: 20px 24px 16px;
+  box-shadow: var(--shadow-sm);
+  padding: 16px 28px;
 }
-header h1 {
-  margin: 0;
+.brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand:hover { text-decoration: none; }
+.brand-logo { display: block; width: 44px; height: 44px; flex-shrink: 0; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-title {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 1.9rem;
-  letter-spacing: 0.5px;
+  font-size: 1.65rem;
+  letter-spacing: 1px;
   color: var(--heading);
 }
-header h2 {
-  margin: 2px 0 0;
-  font-weight: 400;
-  font-size: 1rem;
-  color: var(--muted);
-}
+.brand-sub { font-size: 0.9rem; color: var(--muted); }
 
 /* ---- Article panel -------------------------------------------------------- */
 .article {
   flex: 1 0 auto;
   width: 100%;
   max-width: 900px;
-  margin: 24px auto;
-  padding: 34px 44px 44px;
+  margin: 32px auto 16px;
+  padding: 40px 50px 48px;
   background: var(--content);
   border: 1px solid var(--rule-lt);
-  border-radius: 4px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
 }
 
-/* Article title (the shape name) — serif, like an encyclopedia entry */
 .article > h2 {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.1rem;
   color: var(--heading);
   margin: 0 0 4px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--rule);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--rule);
 }
-
-/* Tagline / classification */
 .article > h3 {
   font-weight: 400;
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   color: var(--muted);
   margin: 0 0 6px;
 }
-
 .article > hr {
   border: none;
   border-top: 1px solid var(--rule-lt);
-  margin: 14px 0 20px;
+  margin: 14px 0 22px;
 }
 
-/* Section headings — the signature underlined encyclopedia heading */
 .article h4 {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.32rem;
   color: var(--heading);
-  margin: 30px 0 12px;
-  padding-bottom: 5px;
+  margin: 34px 0 14px;
+  padding-bottom: 6px;
   border-bottom: 1px solid var(--rule);
   clear: none;
 }
 
-.article p { margin: 0 0 14px; }
-.article ul { margin: 0 0 14px; padding-left: 22px; }
-.article li { margin: 4px 0; }
-.article em { color: inherit; }
+.article p { margin: 0 0 15px; }
+.article ul { margin: 0 0 15px; padding-left: 22px; }
+.article li { margin: 5px 0; }
 .article strong { color: var(--heading); }
 
-/* ---- Lead diagram (floated right, like a Wikipedia thumbnail) ------------- */
+/* ---- Lead diagram (floated like a Wikipedia thumbnail) -------------------- */
 .shape-figure {
   float: right;
-  width: 300px;
+  width: 320px;
   max-width: 46%;
-  margin: 4px 0 16px 24px;
-  padding: 10px;
+  margin: 6px 0 18px 28px;
+  padding: 12px;
   background: var(--box-bg);
   border: 1px solid var(--rule);
-  border-radius: 4px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
 }
 .shape-figure img {
   display: block;
@@ -136,26 +134,26 @@ header h2 {
   height: auto;
   background: #fff;
   border: 1px solid var(--rule-lt);
-  border-radius: 3px;
+  border-radius: 6px;
 }
 .shape-figure figcaption {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 0.85rem;
   line-height: 1.45;
   color: var(--muted);
   text-align: left;
 }
 
-/* ---- Measurements table ("wikitable" look) -------------------------------- */
+/* ---- Measurements table ("wikitable") ------------------------------------- */
 .props {
   border-collapse: collapse;
-  margin: 8px 0 16px;
-  min-width: 320px;
+  margin: 10px 0 18px;
+  min-width: 330px;
   max-width: 100%;
 }
 .props th, .props td {
   text-align: left;
-  padding: 7px 14px;
+  padding: 9px 15px;
   border: 1px solid var(--rule);
 }
 .props th {
@@ -173,9 +171,9 @@ header h2 {
   color: #14315e;
   border: 1px solid #d5e0f0;
   border-left: 4px solid var(--accent);
-  border-radius: 4px;
-  padding: 10px 16px;
-  margin: 8px 0;
+  border-radius: 6px;
+  padding: 11px 16px;
+  margin: 9px 0;
   overflow-x: auto;
 }
 .formula .label {
@@ -191,21 +189,21 @@ header h2 {
   background: var(--box-bg);
   border: 1px solid var(--rule-lt);
   border-left: 4px solid var(--muted);
-  border-radius: 4px;
-  padding: 14px 20px;
-  margin: 12px 0;
+  border-radius: 8px;
+  padding: 16px 22px;
+  margin: 14px 0;
 }
 .example p { margin: 6px 0; }
 .example .result { color: #17457f; font-weight: 700; }
 
 /* ---- Fun fact ------------------------------------------------------------- */
 .funfact {
-  background: #f0f5ff;
+  background: linear-gradient(180deg, #f2f6fd, #edf3fc);
   border: 1px solid #d5e0f0;
   border-left: 4px solid var(--accent);
-  border-radius: 4px;
-  padding: 12px 18px;
-  margin: 12px 0 0;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin: 14px 0 0;
 }
 .funfact p { margin: 0; }
 
@@ -213,7 +211,7 @@ header h2 {
 .back-button-container {
   flex-shrink: 0;
   text-align: center;
-  padding: 8px 16px 40px;
+  padding: 12px 16px 44px;
 }
 .back-button {
   display: inline-block;
@@ -221,16 +219,18 @@ header h2 {
   color: var(--link);
   background: var(--content);
   border: 1px solid var(--rule);
-  padding: 9px 22px;
-  border-radius: 4px;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  padding: 11px 26px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: background .15s ease, border-color .15s ease, transform .12s ease;
 }
 .back-button::before { content: "← "; }
 .back-button:hover,
 .back-button:focus {
   text-decoration: none;
-  background: var(--box-bg);
+  background: #f4f8fd;
   border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 /* ---- Footer --------------------------------------------------------------- */
@@ -239,21 +239,29 @@ footer {
   background: var(--content);
   border-top: 1px solid var(--rule);
   text-align: center;
-  padding: 16px;
+  padding: 20px 16px;
   color: var(--muted);
   font-size: 0.85rem;
 }
 footer p { margin: 0; }
 
 /* ---- Responsive ----------------------------------------------------------- */
-@media (max-width: 680px) {
-  .article { margin: 0; border-radius: 0; padding: 24px 20px 36px; }
-  .article > h2 { font-size: 1.6rem; }
+@media (max-width: 720px) {
+  header { padding: 14px 18px; }
+  .brand-title { font-size: 1.4rem; }
+  .article {
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 26px 20px 36px;
+  }
+  .article > h2 { font-size: 1.7rem; }
   .shape-figure {
     float: none;
     width: 100%;
-    max-width: 340px;
-    margin: 8px auto 20px;
+    max-width: 360px;
+    margin: 10px auto 22px;
   }
   .props, .props th { width: auto; min-width: 0; }
 }

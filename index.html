@@ -4,14 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Geometric Shapes Reference Site</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png">
-  <script src="script.js" defer></script>
+  <link href="style.css?v=3" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=3">
+  <script src="script.js?v=3" defer></script>
 </head>
 <body>
   <header>
-    <h1>G.S.R.S.</h1>
-    <h2>Geometric Shapes Reference Site</h2>
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="favicon.png?v=3" alt="" width="44" height="44" />
+      <span class="brand-text">
+        <span class="brand-title">G.S.R.S.</span>
+        <span class="brand-sub">Geometric Shapes Reference Site</span>
+      </span>
+    </a>
   </header>
 
   <main class="content">
@@ -35,9 +40,15 @@
     <h2>Shape Articles</h2>
     <p>Browse the 19 solids by category, or search to jump straight to one.</p>
 
-    <input class="shape-search" type="search" id="shape-search"
-           placeholder="Search shapes… (e.g. prism, sphere, cone)"
-           aria-label="Search shapes" autocomplete="off" />
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm5 12 4 4" />
+      </svg>
+      <input class="shape-search" type="search" id="shape-search"
+             placeholder="Search shapes… (e.g. prism, sphere, cone)"
+             aria-label="Search shapes" autocomplete="off" />
+    </div>
 
     <div class="shape-index">
       <section class="shape-cat">
