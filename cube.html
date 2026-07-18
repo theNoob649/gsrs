@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Cube</title>
-  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=5">
-  <script src="viewer.js?v=5" defer></script>
-  <script src="article.js?v=5" defer></script>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
@@ -33,7 +33,7 @@
       <canvas class="shape-viewer" data-shape="cube" width="360" height="330"
               aria-label="Interactive 3D model of a cube. Drag to rotate."></canvas>
       <div class="viewer-controls">
-        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <span class="viewer-hint">&#8635; Drag the shape to spin it around</span>
         <div class="measure-row">
           <span class="measure-label">Show on shape:</span>
           <div class="measure-buttons"></div>
@@ -41,53 +41,48 @@
       </div>
     </figure>
 
+
     <h4>What Is It?</h4>
     <p>
-      A <strong>cube</strong> is a solid with six square faces that are all exactly
-      the same size. Every edge is the same length and every corner is a square
-      corner (a right angle). That makes the cube one of the most perfectly even
-      shapes there is — a dice is a cube you probably already know.
+      A <strong>cube</strong> is a solid with 6 square faces that are all exactly the same size. Every edge is the same length and every corner is a square corner (a right angle).
     </p>
     <p>
-      Cubes are everywhere in daily life: gaming <strong>dice</strong>, sugar
-      cubes, Rubik's cubes, cardboard boxes that happen to be square, and the
-      building blocks children stack are all cubes or very close to it.
+      Dice, sugar cubes, Rubik's cubes and wooden building blocks are all cubes.
     </p>
 
-    <h4>Parts &amp; Sizes</h4>
-    <p>The cube is defined by a single measurement — its side length <strong>s</strong>.</p>
+    <h4>Properties</h4>
+    <p>A cube needs just one number: the side length <strong>s</strong>.</p>
     <table class="props">
-      <tr><th>Faces</th><td>6 (all squares)</td></tr>
-      <tr><th>Edges</th><td>12</td></tr>
-      <tr><th>Vertices</th><td>8</td></tr>
-      <tr><th>Side length</th><td>s</td></tr>
+      <tr><th>Faces</th><td>6 &mdash; all squares</td></tr>
+      <tr><th>Edges</th><td>12 &mdash; all the same length</td></tr>
+      <tr><th>Corners (vertices)</th><td>8</td></tr>
+      <tr><th>Faces meeting at each corner</th><td>3</td></tr>
+      <tr><th>Flat or curved</th><td>All flat &mdash; no curved surfaces</td></tr>
+      <tr><th>Lines of symmetry</th><td>9 planes of symmetry</td></tr>
+      <tr><th>Slice it across and you get</th><td>A square</td></tr>
+      <tr><th>Euler's rule</th><td>8 &minus; 12 + 6 = 2 &#10003;</td></tr>
+
     </table>
-    <p>
-      Like every flat-sided shape, it follows <strong>Euler's rule</strong> — corners − edges + faces = 8 − 12 + 6 = 2.
-    </p>
 
     <h4>Formulas</h4>
-    <p class="formula"><span class="label">Volume</span> V = s³</p>
-    <p class="formula"><span class="label">Surface area</span> SA = 6s²</p>
-    <p class="formula"><span class="label">Face diagonal</span> d = s√2</p>
-    <p class="formula"><span class="label">Space diagonal</span> D = s√3</p>
+    <p class="formula"><span class="label">Volume</span> V = s&sup3;</p>
+    <p class="formula"><span class="label">Surface area</span> SA = 6s&sup2;</p>
+    <p class="formula"><span class="label">Face diagonal</span> d = s&radic;2</p>
+    <p class="formula"><span class="label">Space diagonal</span> D = s&radic;3</p>
 
     <h4>Let's Try It!</h4>
     <div class="example">
       <p>Take a cube with side <strong>s = 4</strong>.</p>
-      <p>V = s³ = 4³ = <span class="result">64</span></p>
-      <p>SA = 6s² = 6 × 4² = 6 × 16 = <span class="result">96</span></p>
-      <p>Face diagonal = s√2 = 4√2 ≈ <span class="result">5.66</span></p>
-      <p>Space diagonal = s√3 = 4√3 ≈ <span class="result">6.93</span></p>
+      <p>V = s&sup3; = 64 &rarr; <span class="result">64</span></p>
+      <p>SA = 6s&sup2; = 6 &times; 16 = <span class="result">96</span></p>
+      <p>Face diagonal = 4&radic;2 &asymp; <span class="result">5.66</span></p>
+      <p>Space diagonal = 4&radic;3 &asymp; <span class="result">6.93</span></p>
+
     </div>
 
     <h4>Cool Fact</h4>
     <div class="funfact">
-      <p>
-        The cube is the only Platonic solid that tiles 3D space perfectly with no
-        gaps — which is exactly why bricks, shipping containers, and warehouse
-        shelving are all built on cuboid grids.
-      </p>
+      <p>Cubes stack together with no gaps at all. That's why bricks, boxes and shipping containers are box-shaped &mdash; nothing gets wasted.</p>
     </div>
   </section>
 
@@ -96,7 +91,7 @@
   </div>
 
   <footer>
-    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

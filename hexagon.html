@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G.S.R.S. - Hexagon</title>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
+      <span class="brand-text">
+        <span class="brand-title">G.S.R.S.</span>
+        <span class="brand-sub">Geometric Shapes Reference Site</span>
+      </span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <section class="article">
+    <h2>Hexagon</h2>
+    <h3>Six sides &mdash; the shape bees build with</h3>
+    <hr>
+
+    <figure class="shape-figure">
+      <canvas class="shape-viewer-2d" data-shape2d="hexagon" width="360" height="300"
+              aria-label="Diagram of a hexagon."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">A flat shape &mdash; it has length and width, but no thickness</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
+    </figure>
+
+
+    <h4>What Is It?</h4>
+    <p>
+      A <strong>hexagon</strong> is a flat shape with 6 straight sides and 6 corners. In a <em>regular</em> hexagon all sides match and every angle is 120&deg;.
+    </p>
+    <p>
+      Honeycomb cells, many floor tiles, nuts and bolts seen from above, and snowflake arms are hexagons.
+    </p>
+
+    <h4>Properties</h4>
+    <p>A regular hexagon needs one number: the side length <strong>s</strong>.</p>
+    <table class="props">
+      <tr><th>Sides</th><td>6 &mdash; all equal if regular</td></tr>
+      <tr><th>Corners</th><td>6</td></tr>
+      <tr><th>Each angle</th><td>120&deg;</td></tr>
+      <tr><th>All angles add up to</th><td>720&deg;</td></tr>
+      <tr><th>Lines of symmetry</th><td>6</td></tr>
+      <tr><th>Diagonals</th><td>9</td></tr>
+      <tr><th>Tiles a flat floor?</th><td>Yes &mdash; with no gaps at all</td></tr>
+
+    </table>
+
+    <h4>Formulas</h4>
+    <p class="formula"><span class="label">Area</span> A = (3&radic;3&frasl;2)s&sup2;</p>
+    <p class="formula"><span class="label">Perimeter</span> P = 6s</p>
+
+    <h4>Let's Try It!</h4>
+    <div class="example">
+      <p>Take a regular hexagon with side <strong>s = 4</strong>.</p>
+      <p>A = (3&radic;3&frasl;2) &times; 16 = 24&radic;3 &asymp; <span class="result">41.57</span></p>
+      <p>P = 6s = <span class="result">24</span></p>
+
+    </div>
+
+    <h4>Cool Fact</h4>
+    <div class="funfact">
+      <p>Bees use hexagons because they fit together perfectly with the least wax for the most honey. Mathematicians only proved this was the best possible plan in 1999.</p>
+    </div>
+  </section>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G.S.R.S. - Ellipse</title>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
+      <span class="brand-text">
+        <span class="brand-title">G.S.R.S.</span>
+        <span class="brand-sub">Geometric Shapes Reference Site</span>
+      </span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <section class="article">
+    <h2>Ellipse</h2>
+    <h3>A circle that has been stretched &mdash; an oval</h3>
+    <hr>
+
+    <figure class="shape-figure">
+      <canvas class="shape-viewer-2d" data-shape2d="ellipse" width="360" height="300"
+              aria-label="Diagram of a ellipse."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">A flat shape &mdash; it has length and width, but no thickness</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
+    </figure>
+
+
+    <h4>What Is It?</h4>
+    <p>
+      An <strong>ellipse</strong> is a squashed or stretched circle. Instead of one radius it has two: a long one (<strong>a</strong>) and a short one (<strong>b</strong>). If the two are equal, the ellipse turns back into a circle.
+    </p>
+    <p>
+      Running tracks, some mirrors, and the shape of an egg from the side are all close to ellipses.
+    </p>
+
+    <h4>Properties</h4>
+    <p>An ellipse needs two numbers: the long radius <strong>a</strong> and the short radius <strong>b</strong>.</p>
+    <table class="props">
+      <tr><th>Straight sides</th><td>0 (one smooth curved edge)</td></tr>
+      <tr><th>Corners</th><td>0</td></tr>
+      <tr><th>Lines of symmetry</th><td>2 &mdash; one across, one up and down</td></tr>
+      <tr><th>Long radius</th><td>a</td></tr>
+      <tr><th>Short radius</th><td>b</td></tr>
+      <tr><th>Special case</th><td>If a = b it becomes a circle</td></tr>
+
+    </table>
+
+    <h4>Formulas</h4>
+    <p class="formula"><span class="label">Area</span> A = &pi;ab</p>
+    <p class="formula"><span class="label">Perimeter</span> C &asymp; &pi;[ 3(a+b) &minus; &radic;((3a+b)(a+3b)) ]</p>
+
+    <h4>Let's Try It!</h4>
+    <div class="example">
+      <p>Take an ellipse with <strong>a = 6</strong> and <strong>b = 4</strong>.</p>
+      <p>A = &pi;ab = &pi; &times; 6 &times; 4 &asymp; <span class="result">75.4</span></p>
+      <p>C &asymp; &pi;[3(10) &minus; &radic;(22 &times; 18)] &asymp; <span class="result">31.7</span></p>
+
+    </div>
+
+    <h4>Cool Fact</h4>
+    <div class="funfact">
+      <p>Planets don't travel in circles &mdash; they travel in ellipses, with the Sun sitting slightly off-centre. Johannes Kepler worked this out over 400 years ago.</p>
+    </div>
+  </section>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

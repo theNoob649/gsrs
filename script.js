@@ -3,11 +3,18 @@
    - Live-filters the shape list as you type. */
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* thumbnails */
+  /* thumbnails — 3D solids and 2D flat shapes */
   if (window.GSRS) {
     document.querySelectorAll("canvas.thumb").forEach(function (c) {
-      var k = c.getAttribute("data-shape");
-      if (GSRS.SHAPES[k]) GSRS.mountThumb(c, k);
+      var k3 = c.getAttribute("data-shape");
+      var k2 = c.getAttribute("data-shape2d");
+      try {
+        if (k3 && GSRS.SHAPES[k3]) GSRS.mountThumb(c, k3);
+        else if (k2 && GSRS.SHAPES2D[k2]) GSRS.mount2D(c, k2);
+      } catch (err) {
+        // one bad thumbnail must never stop the rest from drawing
+        if (window.console) console.error("thumbnail failed:", k3 || k2, err);
+      }
     });
   }
 

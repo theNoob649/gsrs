@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Cuboid</title>
-  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=5">
-  <script src="viewer.js?v=5" defer></script>
-  <script src="article.js?v=5" defer></script>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
@@ -25,15 +25,15 @@
   </header>
 
   <section class="article">
-    <h2>Cuboid (Rectangular Prism)</h2>
-    <h3>A stretched box — like a shoebox</h3>
+    <h2>Cuboid</h2>
+    <h3>A stretched box &mdash; like a shoebox</h3>
     <hr>
 
     <figure class="shape-figure">
       <canvas class="shape-viewer" data-shape="cuboid" width="360" height="330"
-              aria-label="Interactive 3D model of a cuboid (rectangular prism). Drag to rotate."></canvas>
+              aria-label="Interactive 3D model of a cuboid. Drag to rotate."></canvas>
       <div class="viewer-controls">
-        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <span class="viewer-hint">&#8635; Drag the shape to spin it around</span>
         <div class="measure-row">
           <span class="measure-label">Show on shape:</span>
           <div class="measure-buttons"></div>
@@ -41,52 +41,46 @@
       </div>
     </figure>
 
+
     <h4>What Is It?</h4>
     <p>
-      A <strong>cuboid</strong>, also called a rectangular prism or rectangular
-      box, is a solid with six rectangular faces meeting at right angles. Opposite
-      faces are equal, but unlike the cube its length, width, and height can all
-      differ. A cube is simply the special case where all three are equal.
+      A <strong>cuboid</strong> (also called a rectangular prism) has 6 rectangular faces that meet at square corners. Unlike a cube, its length, width and height can all be different.
     </p>
     <p>
-      Real-world cuboids include <strong>bricks</strong>, cereal boxes,
-      smartphones, books, and shipping containers — most everyday "box" shapes are
-      cuboids.
+      Cereal boxes, bricks, phones and books are cuboids. A cube is simply a cuboid where every side happens to be equal.
     </p>
 
-    <h4>Parts &amp; Sizes</h4>
-    <p>A cuboid is defined by three measurements: length <strong>l</strong>, width <strong>w</strong>, and height <strong>h</strong>.</p>
+    <h4>Properties</h4>
+    <p>A cuboid needs three numbers: length <strong>l</strong>, width <strong>w</strong> and height <strong>h</strong>.</p>
     <table class="props">
-      <tr><th>Faces</th><td>6 (all rectangles)</td></tr>
-      <tr><th>Edges</th><td>12</td></tr>
-      <tr><th>Vertices</th><td>8</td></tr>
-      <tr><th>Dimensions</th><td>l, w, h</td></tr>
+      <tr><th>Faces</th><td>6 &mdash; all rectangles</td></tr>
+      <tr><th>Edges</th><td>12 &mdash; in 3 groups of 4</td></tr>
+      <tr><th>Corners (vertices)</th><td>8</td></tr>
+      <tr><th>Faces meeting at each corner</th><td>3</td></tr>
+      <tr><th>Flat or curved</th><td>All flat</td></tr>
+      <tr><th>Lines of symmetry</th><td>3 planes of symmetry</td></tr>
+      <tr><th>Slice it across and you get</th><td>A rectangle</td></tr>
+      <tr><th>Euler's rule</th><td>8 &minus; 12 + 6 = 2 &#10003;</td></tr>
+
     </table>
-    <p>
-      Like every flat-sided shape, it follows <strong>Euler's rule</strong> — corners − edges + faces = 8 − 12 + 6 = 2.
-    </p>
 
     <h4>Formulas</h4>
-    <p class="formula"><span class="label">Volume</span> V = l · w · h</p>
+    <p class="formula"><span class="label">Volume</span> V = l &times; w &times; h</p>
     <p class="formula"><span class="label">Surface area</span> SA = 2(lw + lh + wh)</p>
-    <p class="formula"><span class="label">Space diagonal</span> D = √(l² + w² + h²)</p>
+    <p class="formula"><span class="label">Space diagonal</span> D = &radic;(l&sup2; + w&sup2; + h&sup2;)</p>
 
     <h4>Let's Try It!</h4>
     <div class="example">
       <p>Take a cuboid with <strong>l = 5, w = 3, h = 4</strong>.</p>
-      <p>V = l · w · h = 5 × 3 × 4 = <span class="result">60</span></p>
-      <p>SA = 2(lw + lh + wh) = 2(15 + 20 + 12) = 2 × 47 = <span class="result">94</span></p>
-      <p>Space diagonal = √(25 + 9 + 16) = √50 ≈ <span class="result">7.07</span></p>
+      <p>V = 5 &times; 3 &times; 4 = <span class="result">60</span></p>
+      <p>SA = 2(15 + 20 + 12) = <span class="result">94</span></p>
+      <p>D = &radic;(25 + 9 + 16) = &radic;50 &asymp; <span class="result">7.07</span></p>
+
     </div>
 
     <h4>Cool Fact</h4>
     <div class="funfact">
-      <p>
-        A "perfect cuboid" — one where all edges, all face diagonals, and the
-        space diagonal are simultaneously whole numbers — has never been found,
-        and whether one can exist at all is still an unsolved problem in
-        mathematics.
-      </p>
+      <p>Nobody has ever found a "perfect cuboid" &mdash; one where every edge, every face diagonal and the space diagonal are all whole numbers. Mathematicians still don't know if one exists.</p>
     </div>
   </section>
 
@@ -95,7 +89,7 @@
   </div>
 
   <footer>
-    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

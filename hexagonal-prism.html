@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Hexagonal Prism</title>
-  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=5">
-  <script src="viewer.js?v=5" defer></script>
-  <script src="article.js?v=5" defer></script>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
@@ -26,14 +26,14 @@
 
   <section class="article">
     <h2>Hexagonal Prism</h2>
-    <h3>A tube with six-sided ends — like a pencil</h3>
+    <h3>A tube with six-sided ends &mdash; like a pencil</h3>
     <hr>
 
     <figure class="shape-figure">
       <canvas class="shape-viewer" data-shape="hexagonal-prism" width="360" height="330"
               aria-label="Interactive 3D model of a hexagonal prism. Drag to rotate."></canvas>
       <div class="viewer-controls">
-        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <span class="viewer-hint">&#8635; Drag the shape to spin it around</span>
         <div class="measure-row">
           <span class="measure-label">Show on shape:</span>
           <div class="measure-buttons"></div>
@@ -41,57 +41,47 @@
       </div>
     </figure>
 
+
     <h4>What Is It?</h4>
     <p>
-      A <strong>hexagonal prism</strong> has two identical, parallel hexagonal
-      bases connected by six rectangular faces. When the bases are regular
-      hexagons and the sides are perpendicular to them, it is a
-      <em>right regular hexagonal prism</em> — the form modelled by the wooden
-      block in this set.
+      A <strong>hexagonal prism</strong> has two matching hexagon ends joined by 6 rectangles. Every slice across it is the same hexagon.
     </p>
     <p>
-      Real-world hexagonal prisms include ordinary <strong>pencils</strong>,
-      metal <strong>nuts</strong> that thread onto bolts, and the cells of a
-      <strong>honeycomb</strong>, which pack together with no wasted space.
+      Ordinary pencils, the nuts that screw onto bolts, and the cells of a honeycomb are hexagonal prisms.
     </p>
 
-    <h4>Parts &amp; Sizes</h4>
-    <p>A right regular hexagonal prism is defined by the base side <strong>a</strong> and the height <strong>h</strong>.</p>
+    <h4>Properties</h4>
+    <p>A regular hexagonal prism needs two numbers: the base side <strong>a</strong> and the height <strong>h</strong>.</p>
     <table class="props">
-      <tr><th>Faces</th><td>8 (2 hexagons + 6 rectangles)</td></tr>
+      <tr><th>Faces</th><td>8 &mdash; 2 hexagons + 6 rectangles</td></tr>
       <tr><th>Edges</th><td>18</td></tr>
-      <tr><th>Vertices</th><td>12</td></tr>
-      <tr><th>Base side</th><td>a</td></tr>
-      <tr><th>Height</th><td>h</td></tr>
+      <tr><th>Corners (vertices)</th><td>12</td></tr>
+      <tr><th>Bases</th><td>2 matching hexagons</td></tr>
+      <tr><th>Flat or curved</th><td>All flat</td></tr>
+      <tr><th>Slice it across and you get</th><td>A hexagon</td></tr>
+      <tr><th>Euler's rule</th><td>12 &minus; 18 + 8 = 2 &#10003;</td></tr>
+
     </table>
-    <p>
-      Like every flat-sided shape, it follows <strong>Euler's rule</strong> — corners − edges + faces = 12 − 18 + 8 = 2.
-    </p>
 
     <h4>Formulas</h4>
-    <p class="formula"><span class="label">Base area</span> B = (3√3⁄2)a²</p>
+    <p class="formula"><span class="label">Base area</span> B = (3&radic;3&frasl;2)a&sup2;</p>
     <p class="formula"><span class="label">Base perimeter</span> P = 6a</p>
-    <p class="formula"><span class="label">Volume</span> V = B·h = (3√3⁄2)a²h</p>
-    <p class="formula"><span class="label">Lateral SA</span> LSA = P·h = 6ah</p>
-    <p class="formula"><span class="label">Total SA</span> SA = 2B + 6ah = 3√3·a² + 6ah</p>
+    <p class="formula"><span class="label">Volume</span> V = B &times; h</p>
+    <p class="formula"><span class="label">Side surface</span> LSA = 6ah</p>
+    <p class="formula"><span class="label">Surface area</span> SA = 2B + 6ah</p>
 
     <h4>Let's Try It!</h4>
     <div class="example">
-      <p>Take a hexagonal prism with base side <strong>a = 4</strong> and height <strong>h = 10</strong>.</p>
-      <p>B = (3√3⁄2)a² = (3√3⁄2)(16) = 24√3 ≈ 41.57</p>
-      <p>V = B·h = 24√3 × 10 ≈ <span class="result">415.69</span></p>
-      <p>LSA = 6ah = 6 × 4 × 10 = <span class="result">240</span></p>
-      <p>Total SA = 2B + 6ah = 48√3 + 240 ≈ <span class="result">323.14</span></p>
+      <p>Take a hexagonal prism with <strong>a = 4</strong> and <strong>h = 10</strong>.</p>
+      <p>B = (3&radic;3&frasl;2) &times; 16 = 24&radic;3 &asymp; 41.57</p>
+      <p>V = B &times; h &asymp; <span class="result">415.69</span></p>
+      <p>SA = 2B + 6ah = 48&radic;3 + 240 &asymp; <span class="result">323.14</span></p>
+
     </div>
 
     <h4>Cool Fact</h4>
     <div class="funfact">
-      <p>
-        Bees build honeycomb from hexagonal prisms because the hexagon tiles a
-        plane with the least wall material for the most storage — a natural
-        solution to a problem mathematicians call the "honeycomb conjecture,"
-        proven only in 1999.
-      </p>
+      <p>Pencils are hexagonal for a very practical reason: a round pencil rolls off the desk, but a six-sided one stops after a small nudge.</p>
     </div>
   </section>
 
@@ -100,7 +90,7 @@
   </div>
 
   <footer>
-    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

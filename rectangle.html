@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G.S.R.S. - Rectangle</title>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
+      <span class="brand-text">
+        <span class="brand-title">G.S.R.S.</span>
+        <span class="brand-sub">Geometric Shapes Reference Site</span>
+      </span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <section class="article">
+    <h2>Rectangle</h2>
+    <h3>Four square corners, opposite sides equal</h3>
+    <hr>
+
+    <figure class="shape-figure">
+      <canvas class="shape-viewer-2d" data-shape2d="rectangle" width="360" height="300"
+              aria-label="Diagram of a rectangle."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">A flat shape &mdash; it has length and width, but no thickness</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
+    </figure>
+
+
+    <h4>What Is It?</h4>
+    <p>
+      A <strong>rectangle</strong> is a flat shape with 4 square corners. The two long sides match each other and the two short sides match each other.
+    </p>
+    <p>
+      Doors, phone screens, books, and this page are all rectangles. A square is just a rectangle where every side happens to be equal.
+    </p>
+
+    <h4>Properties</h4>
+    <p>A rectangle needs two numbers: the length <strong>l</strong> and the width <strong>w</strong>.</p>
+    <table class="props">
+      <tr><th>Sides</th><td>4 &mdash; opposite sides equal</td></tr>
+      <tr><th>Corners</th><td>4</td></tr>
+      <tr><th>Each angle</th><td>90&deg;</td></tr>
+      <tr><th>All angles add up to</th><td>360&deg;</td></tr>
+      <tr><th>Parallel sides</th><td>2 pairs</td></tr>
+      <tr><th>Lines of symmetry</th><td>2</td></tr>
+      <tr><th>Diagonals</th><td>2 &mdash; equal in length, and they cut each other in half</td></tr>
+
+    </table>
+
+    <h4>Formulas</h4>
+    <p class="formula"><span class="label">Area</span> A = l &times; w</p>
+    <p class="formula"><span class="label">Perimeter</span> P = 2(l + w)</p>
+    <p class="formula"><span class="label">Diagonal</span> d = &radic;(l&sup2; + w&sup2;)</p>
+
+    <h4>Let's Try It!</h4>
+    <div class="example">
+      <p>Take a rectangle with <strong>l = 8</strong> and <strong>w = 5</strong>.</p>
+      <p>A = l &times; w = 40 &rarr; <span class="result">40</span></p>
+      <p>P = 2(8 + 5) = <span class="result">26</span></p>
+      <p>d = &radic;(64 + 25) = &radic;89 &asymp; <span class="result">9.43</span></p>
+
+    </div>
+
+    <h4>Cool Fact</h4>
+    <div class="funfact">
+      <p>A4 paper is a clever rectangle: cut it in half and each piece has exactly the same shape as the original, just smaller.</p>
+    </div>
+  </section>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

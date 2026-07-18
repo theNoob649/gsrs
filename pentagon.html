@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G.S.R.S. - Pentagon</title>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
+      <span class="brand-text">
+        <span class="brand-title">G.S.R.S.</span>
+        <span class="brand-sub">Geometric Shapes Reference Site</span>
+      </span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <section class="article">
+    <h2>Pentagon</h2>
+    <h3>Five sides &mdash; like a home plate</h3>
+    <hr>
+
+    <figure class="shape-figure">
+      <canvas class="shape-viewer-2d" data-shape2d="pentagon" width="360" height="300"
+              aria-label="Diagram of a pentagon."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">A flat shape &mdash; it has length and width, but no thickness</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
+    </figure>
+
+
+    <h4>What Is It?</h4>
+    <p>
+      A <strong>pentagon</strong> is a flat shape with 5 straight sides and 5 corners. In a <em>regular</em> pentagon all the sides match and every angle is 108&deg;.
+    </p>
+    <p>
+      The most famous one is the Pentagon building in America. You'll also find pentagons on a classic football, mixed in with hexagons.
+    </p>
+
+    <h4>Properties</h4>
+    <p>A regular pentagon needs one number: the side length <strong>s</strong>.</p>
+    <table class="props">
+      <tr><th>Sides</th><td>5 &mdash; all equal if regular</td></tr>
+      <tr><th>Corners</th><td>5</td></tr>
+      <tr><th>Each angle</th><td>108&deg;</td></tr>
+      <tr><th>All angles add up to</th><td>540&deg;</td></tr>
+      <tr><th>Lines of symmetry</th><td>5</td></tr>
+      <tr><th>Diagonals</th><td>5</td></tr>
+      <tr><th>Tiles a flat floor?</th><td>No &mdash; regular pentagons leave gaps</td></tr>
+
+    </table>
+
+    <h4>Formulas</h4>
+    <p class="formula"><span class="label">Area</span> A = &frac14;&radic;(5(5 + 2&radic;5)) &times; s&sup2; &asymp; 1.72s&sup2;</p>
+    <p class="formula"><span class="label">Perimeter</span> P = 5s</p>
+
+    <h4>Let's Try It!</h4>
+    <div class="example">
+      <p>Take a regular pentagon with side <strong>s = 6</strong>.</p>
+      <p>A &asymp; 1.72 &times; 36 &asymp; <span class="result">61.9</span></p>
+      <p>P = 5s = <span class="result">30</span></p>
+
+    </div>
+
+    <h4>Cool Fact</h4>
+    <div class="funfact">
+      <p>Draw every diagonal inside a regular pentagon and a five-pointed star appears in the middle.</p>
+    </div>
+  </section>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

@@ -139,13 +139,16 @@ header {
   border-radius: 10px;
   box-shadow: var(--shadow-sm);
 }
-.shape-viewer {
+.shape-viewer,
+.shape-viewer-2d {
   display: block;
   width: 100%;
   height: auto;
   background: radial-gradient(circle at 50% 40%, #ffffff, #eef2f7);
   border: 1px solid var(--rule-lt);
   border-radius: 8px;
+}
+.shape-viewer {
   cursor: grab;
   touch-action: none;   /* let drag rotate instead of scrolling on touch */
 }

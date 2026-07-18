@@ -240,6 +240,30 @@ hr {
 }
 
 /* ---- Quiz ----------------------------------------------------------------- */
+.mode-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0 4px;
+}
+.mode-tab {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--muted);
+  background: #fff;
+  border: 1.5px solid var(--rule);
+  border-radius: 999px;
+  padding: 9px 24px;
+  cursor: pointer;
+  transition: background .12s, border-color .12s, color .12s;
+}
+.mode-tab:hover { border-color: var(--accent); color: var(--link); }
+.mode-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 .quiz-card {
   background: #fafbfc;
   border: 1px solid var(--rule);
@@ -301,6 +325,16 @@ hr {
 .quiz-choice:disabled { cursor: default; }
 .quiz-choice.correct { background: #e7f6ec; border-color: #3fa564; color: #1e7a44; }
 .quiz-choice.wrong   { background: #fdecea; border-color: #d9534f; color: #b23b3b; }
+/* long answers (vocabulary definitions) stack full-width and read left */
+.quiz-choice.long {
+  display: block;
+  width: 100%;
+  max-width: 540px;
+  margin: 7px auto;
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.45;
+}
 
 /* number entry */
 .quiz-input-row {

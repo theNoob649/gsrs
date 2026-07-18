@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G.S.R.S. - Triangle</title>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
+      <span class="brand-text">
+        <span class="brand-title">G.S.R.S.</span>
+        <span class="brand-sub">Geometric Shapes Reference Site</span>
+      </span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <section class="article">
+    <h2>Triangle</h2>
+    <h3>Three sides, three corners &mdash; the strongest shape</h3>
+    <hr>
+
+    <figure class="shape-figure">
+      <canvas class="shape-viewer-2d" data-shape2d="triangle" width="360" height="300"
+              aria-label="Diagram of a triangle."></canvas>
+      <div class="viewer-controls">
+        <span class="viewer-hint">A flat shape &mdash; it has length and width, but no thickness</span>
+        <div class="measure-row">
+          <span class="measure-label">Show on shape:</span>
+          <div class="measure-buttons"></div>
+        </div>
+      </div>
+    </figure>
+
+
+    <h4>What Is It?</h4>
+    <p>
+      A <strong>triangle</strong> is a flat shape with 3 straight sides and 3 corners. No matter what it looks like, its three angles always add up to 180&deg;.
+    </p>
+    <p>
+      Triangles come in types: <em>equilateral</em> (all 3 sides equal), <em>isosceles</em> (2 sides equal), and <em>scalene</em> (all different). A <em>right triangle</em> has one square corner.
+    </p>
+
+    <h4>Properties</h4>
+    <p>To find the area you need the <strong>base (b)</strong> and the <strong>height (h)</strong> &mdash; the height is measured straight up from the base.</p>
+    <table class="props">
+      <tr><th>Sides</th><td>3</td></tr>
+      <tr><th>Corners</th><td>3</td></tr>
+      <tr><th>All angles add up to</th><td>180&deg;</td></tr>
+      <tr><th>Equilateral triangle</th><td>3 equal sides, every angle 60&deg;, 3 lines of symmetry</td></tr>
+      <tr><th>Isosceles triangle</th><td>2 equal sides, 1 line of symmetry</td></tr>
+      <tr><th>Scalene triangle</th><td>No equal sides, no lines of symmetry</td></tr>
+      <tr><th>Diagonals</th><td>0 &mdash; a triangle has none</td></tr>
+
+    </table>
+
+    <h4>Formulas</h4>
+    <p class="formula"><span class="label">Area</span> A = &frac12; &times; b &times; h</p>
+    <p class="formula"><span class="label">Perimeter</span> P = a + b + c</p>
+    <p class="formula"><span class="label">Equilateral area</span> A = (&radic;3&frasl;4)a&sup2;</p>
+
+    <h4>Let's Try It!</h4>
+    <div class="example">
+      <p>Take a triangle with base <strong>b = 10</strong> and height <strong>h = 6</strong>.</p>
+      <p>A = &frac12; &times; 10 &times; 6 = <span class="result">30</span></p>
+      <p>Now an equilateral triangle with side <strong>a = 6</strong>:</p>
+      <p>A = (&radic;3&frasl;4) &times; 36 &asymp; <span class="result">15.59</span></p>
+
+    </div>
+
+    <h4>Cool Fact</h4>
+    <div class="funfact">
+      <p>A triangle can't be pushed out of shape without bending a side, which is why bridges, roofs, and cranes are full of them.</p>
+    </div>
+  </section>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

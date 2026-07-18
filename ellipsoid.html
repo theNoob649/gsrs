@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Ellipsoid</title>
-  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=5">
-  <script src="viewer.js?v=5" defer></script>
-  <script src="article.js?v=5" defer></script>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
@@ -26,14 +26,14 @@
 
   <section class="article">
     <h2>Ellipsoid</h2>
-    <h3>A stretched ball — like an egg</h3>
+    <h3>A stretched ball &mdash; like an egg</h3>
     <hr>
 
     <figure class="shape-figure">
       <canvas class="shape-viewer" data-shape="ellipsoid" width="360" height="330"
               aria-label="Interactive 3D model of a ellipsoid. Drag to rotate."></canvas>
       <div class="viewer-controls">
-        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <span class="viewer-hint">&#8635; Drag the shape to spin it around</span>
         <div class="measure-row">
           <span class="measure-label">Show on shape:</span>
           <div class="measure-buttons"></div>
@@ -41,55 +41,43 @@
       </div>
     </figure>
 
+
     <h4>What Is It?</h4>
     <p>
-      An <strong>ellipsoid</strong> is a smooth, closed surface that looks like a
-      sphere stretched or squashed along its axes. It is described by three
-      <strong>semi-axes</strong> — <strong>a</strong>, <strong>b</strong>, and
-      <strong>c</strong> — the distances from the center to the surface along each
-      of the three perpendicular directions. When all three are equal
-      (a = b = c) the ellipsoid is simply a sphere.
+      An <strong>ellipsoid</strong> is a sphere that has been stretched or squashed. Instead of one radius it has three, called <strong>a</strong>, <strong>b</strong> and <strong>c</strong> &mdash; one for each direction.
     </p>
     <p>
-      Real-world ellipsoids include a <strong>rugby or American football</strong>,
-      an egg (roughly), M&amp;M candies, and — on a planetary scale — the Earth
-      itself, which bulges slightly at the equator.
+      Rugby balls, eggs and M&amp;M sweets are ellipsoid shapes. If all three radii are equal, it turns back into a sphere.
     </p>
 
-    <h4>Parts &amp; Sizes</h4>
-    <p>An ellipsoid is a curved solid defined by three semi-axes <strong>a, b, c</strong>.</p>
+    <h4>Properties</h4>
+    <p>An ellipsoid needs three numbers: the semi-axes <strong>a</strong>, <strong>b</strong> and <strong>c</strong>.</p>
     <table class="props">
-      <tr><th>Surface</th><td>1 smooth curved surface</td></tr>
-      <tr><th>Semi-axes</th><td>a, b, c (center to surface along each axis)</td></tr>
-      <tr><th>Special case</th><td>a = b = c → sphere</td></tr>
+      <tr><th>Flat faces</th><td>0</td></tr>
+      <tr><th>Curved surfaces</th><td>1 smooth surface</td></tr>
+      <tr><th>Edges</th><td>0</td></tr>
+      <tr><th>Corners (vertices)</th><td>0</td></tr>
+      <tr><th>Lines of symmetry</th><td>3 planes of symmetry</td></tr>
+      <tr><th>Slice it and you get</th><td>A circle or an ellipse</td></tr>
+      <tr><th>Special case</th><td>If a = b = c it is a sphere</td></tr>
+
     </table>
 
     <h4>Formulas</h4>
-    <p class="formula"><span class="label">Volume</span> V = (4⁄3)πabc</p>
-    <p class="formula"><span class="label">Surface area</span> SA ≈ 4π · [ ( aᵖbᵖ + aᵖcᵖ + bᵖcᵖ ) ⁄ 3 ]<sup>(1⁄p)</sup></p>
-    <p class="formula"><span class="label">with</span> p ≈ 1.6075 &nbsp;(Thomsen approximation)</p>
-    <p>
-      Unlike the sphere, an ellipsoid has <strong>no simple exact formula</strong>
-      for surface area; the Thomsen formula above is a close approximation. Setting
-      a = b = c recovers the exact sphere result, SA = 4πr².
-    </p>
+    <p class="formula"><span class="label">Volume</span> V = (4&frasl;3)&pi;abc</p>
+    <p class="formula"><span class="label">Surface area</span> SA &asymp; 4&pi;[ (a&#7522;b&#7522; + a&#7522;c&#7522; + b&#7522;c&#7522;) &frasl; 3 ]<sup>(1&frasl;p)</sup>, p &asymp; 1.6075</p>
 
     <h4>Let's Try It!</h4>
     <div class="example">
-      <p>Take an ellipsoid with semi-axes <strong>a = 3, b = 2, c = 1</strong>.</p>
-      <p>V = (4⁄3)πabc = (4⁄3)π(3)(2)(1) = 8π ≈ <span class="result">25.13</span></p>
-      <p>With p = 1.6075: aᵖ ≈ 5.847, bᵖ ≈ 3.048, cᵖ = 1</p>
-      <p>(aᵖbᵖ + aᵖcᵖ + bᵖcᵖ)⁄3 = (17.82 + 5.85 + 3.05)⁄3 ≈ 8.904</p>
-      <p>SA ≈ 4π × 8.904<sup>(1⁄1.6075)</sup> ≈ 4π × 3.897 ≈ <span class="result">48.97</span></p>
+      <p>Take an ellipsoid with <strong>a = 3, b = 2, c = 1</strong>.</p>
+      <p>V = (4&frasl;3)&pi; &times; 3 &times; 2 &times; 1 = 8&pi; &asymp; <span class="result">25.13</span></p>
+      <p>SA &asymp; <span class="result">48.97</span> (there is no simple exact formula)</p>
+
     </div>
 
     <h4>Cool Fact</h4>
     <div class="funfact">
-      <p>
-        Earth is not a perfect sphere but an <em>oblate ellipsoid</em> — spinning
-        makes it bulge at the equator, so the planet is about 43 km wider across
-        the equator than from pole to pole.
-      </p>
+      <p>The Earth is not a perfect sphere &mdash; spinning makes it bulge, so it is about 43 km wider around the equator than from pole to pole.</p>
     </div>
   </section>
 
@@ -98,7 +86,7 @@
   </div>
 
   <footer>
-    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

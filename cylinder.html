@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Cylinder</title>
-  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=5">
-  <script src="viewer.js?v=5" defer></script>
-  <script src="article.js?v=5" defer></script>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
@@ -26,14 +26,14 @@
 
   <section class="article">
     <h2>Cylinder</h2>
-    <h3>A round tube with flat ends — like a can</h3>
+    <h3>A round tube with flat ends &mdash; like a can</h3>
     <hr>
 
     <figure class="shape-figure">
       <canvas class="shape-viewer" data-shape="cylinder" width="360" height="330"
               aria-label="Interactive 3D model of a cylinder. Drag to rotate."></canvas>
       <div class="viewer-controls">
-        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <span class="viewer-hint">&#8635; Drag the shape to spin it around</span>
         <div class="measure-row">
           <span class="measure-label">Show on shape:</span>
           <div class="measure-buttons"></div>
@@ -41,48 +41,46 @@
       </div>
     </figure>
 
+
     <h4>What Is It?</h4>
     <p>
-      A <strong>cylinder</strong> is a solid with two parallel circular bases of
-      equal size, connected by a single curved surface. In a right circular
-      cylinder the side is perpendicular to the bases, so the shape looks like a
-      can standing upright.
+      A <strong>cylinder</strong> has two matching circles &mdash; one at the top, one at the bottom &mdash; joined by one curved surface wrapped around the outside.
     </p>
     <p>
-      Common cylinders include <strong>soup and soda cans</strong>, pipes,
-      batteries, candles, and drinking glasses.
+      Drink cans, candles, batteries, pipes and drinking glasses are cylinders.
     </p>
 
-    <h4>Parts &amp; Sizes</h4>
-    <p>A cylinder is defined by the base radius <strong>r</strong> and the height <strong>h</strong>.</p>
+    <h4>Properties</h4>
+    <p>A cylinder needs two numbers: the radius <strong>r</strong> and the height <strong>h</strong>.</p>
     <table class="props">
-      <tr><th>Surfaces</th><td>2 flat circular bases + 1 curved side</td></tr>
-      <tr><th>Radius</th><td>r</td></tr>
-      <tr><th>Height</th><td>h</td></tr>
+      <tr><th>Flat faces</th><td>2 &mdash; the circles on the ends</td></tr>
+      <tr><th>Curved surfaces</th><td>1 wrapped around the side</td></tr>
+      <tr><th>Edges</th><td>2 curved edges (the rims)</td></tr>
+      <tr><th>Corners (vertices)</th><td>0</td></tr>
+      <tr><th>Bases</th><td>2 matching circles</td></tr>
+      <tr><th>Slice it across and you get</th><td>A circle</td></tr>
+      <tr><th>Euler's rule</th><td>Doesn't apply &mdash; it has curved surfaces</td></tr>
+
     </table>
 
     <h4>Formulas</h4>
-    <p class="formula"><span class="label">Volume</span> V = πr²h</p>
-    <p class="formula"><span class="label">Curved SA</span> CSA = 2πrh</p>
-    <p class="formula"><span class="label">Total SA</span> SA = 2πr² + 2πrh = 2πr(r + h)</p>
-    <p class="formula"><span class="label">Base circ.</span> C = 2πr</p>
+    <p class="formula"><span class="label">Volume</span> V = &pi;r&sup2;h</p>
+    <p class="formula"><span class="label">Curved surface</span> CSA = 2&pi;rh</p>
+    <p class="formula"><span class="label">Surface area</span> SA = 2&pi;r(r + h)</p>
+    <p class="formula"><span class="label">Circle around the base</span> C = 2&pi;r</p>
 
     <h4>Let's Try It!</h4>
     <div class="example">
-      <p>Take a cylinder with radius <strong>r = 3</strong> and height <strong>h = 7</strong>.</p>
-      <p>V = πr²h = π(9)(7) = 63π ≈ <span class="result">197.92</span></p>
-      <p>CSA = 2πrh = 2π(3)(7) = 42π ≈ <span class="result">131.95</span></p>
-      <p>Total SA = 2πr(r + h) = 2π(3)(10) = 60π ≈ <span class="result">188.50</span></p>
-      <p>Base circumference = 2πr = 6π ≈ <span class="result">18.85</span></p>
+      <p>Take a cylinder with <strong>r = 3</strong> and <strong>h = 7</strong>.</p>
+      <p>V = &pi; &times; 9 &times; 7 = 63&pi; &asymp; <span class="result">197.92</span></p>
+      <p>CSA = 2&pi; &times; 3 &times; 7 = 42&pi; &asymp; <span class="result">131.95</span></p>
+      <p>SA = 2&pi; &times; 3 &times; 10 = 60&pi; &asymp; <span class="result">188.50</span></p>
+
     </div>
 
     <h4>Cool Fact</h4>
     <div class="funfact">
-      <p>
-        Unroll a cylinder's curved side and it flattens into a plain rectangle
-        whose width is the base circumference (2πr) and whose height is h — which
-        is exactly why the curved surface area is 2πr × h.
-      </p>
+      <p>Peel the label off a can and flatten it out and you get a perfect rectangle. Its width is the circle around the can, which is why the curved surface is 2&pi;r &times; h.</p>
     </div>
   </section>
 
@@ -91,7 +89,7 @@
   </div>
 
   <footer>
-    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

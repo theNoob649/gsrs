@@ -1,7 +1,9 @@
 /* G.S.R.S. — quiz.js
-   Endless, randomized shape quiz. Each question picks a random shape, random
-   size, and a random question type (name it, count parts, find volume, find
-   surface area). The picture is drawn to scale and can be spun around. */
+   Two endless, randomized quiz modes:
+     • Shapes     — a to-scale, spinnable shape; name it, count its parts,
+                    or work out its volume / surface area.
+     • Vocabulary — geometry words and what they mean.
+   Questions are generated fresh every time, so they never run in a loop. */
 (function () {
   "use strict";
 
@@ -17,8 +19,9 @@
   function r1(x) { return Math.round(x * 10) / 10; }
 
   var PI = Math.PI, S3 = Math.sqrt(3), S5 = Math.sqrt(5);
-  var PENT = 0.25 * Math.sqrt(5 * (5 + 2 * S5));   // regular-pentagon area coeff ≈ 1.72
+  var PENT = 0.25 * Math.sqrt(5 * (5 + 2 * S5));
 
+  /* ---- shape data ------------------------------------------------------- */
   var SHAPES = {
     cube: { name: "Cube", poly: { Faces: 6, Edges: 12, Corners: 8 },
       gen: function () { return { s: randInt(2, 9) }; },
@@ -77,50 +80,112 @@
       vol: function (d) { return (4/3) * PI * d.a * d.b * d.c; }, volF: function () { return "V = (4⁄3)πabc"; },
       surf: null, surfF: null }
   };
-
   var KEYS = Object.keys(SHAPES);
   var NAMES = KEYS.map(function (k) { return SHAPES[k].name; });
 
-  function makeQuestion() {
+  /* ---- vocabulary data -------------------------------------------------- */
+  var VOCAB = [
+    ["Face", "A flat surface on a solid shape"],
+    ["Edge", "The line where two faces meet"],
+    ["Vertex", "A corner where edges meet"],
+    ["Radius", "The distance from the centre of a circle to its edge"],
+    ["Diameter", "The distance straight across a circle through the centre"],
+    ["Circumference", "The distance all the way around a circle"],
+    ["Perimeter", "The total distance around the outside of a flat shape"],
+    ["Area", "The amount of space inside a flat shape"],
+    ["Volume", "The amount of space inside a solid shape"],
+    ["Surface area", "The total area of all the outside surfaces of a solid"],
+    ["Parallel", "Two lines that stay the same distance apart and never meet"],
+    ["Perpendicular", "Two lines that meet at a right angle"],
+    ["Right angle", "A square corner, exactly 90 degrees"],
+    ["Diagonal", "A straight line joining two corners that are not next to each other"],
+    ["Line of symmetry", "A line that cuts a shape into two matching halves"],
+    ["Congruent", "Exactly the same shape and the same size"],
+    ["Base", "The flat surface a shape sits on"],
+    ["Apex", "The pointed top of a cone or a pyramid"],
+    ["Polygon", "A flat shape made only of straight sides"],
+    ["Polyhedron", "A solid shape whose faces are all flat"],
+    ["Prism", "A solid with two matching ends joined by rectangles"],
+    ["Pyramid", "A solid with a flat base whose sides meet at a point"],
+    ["Equilateral", "Having all sides the same length"],
+    ["Isosceles", "Having exactly two sides the same length"],
+    ["Slant height", "The distance along the sloping surface from the apex to the base edge"],
+    ["Cross-section", "The flat shape you see when you slice straight through a solid"]
+  ];
+
+  /* ---- question builders ------------------------------------------------ */
+  function shapeQuestion() {
     var key = pick(KEYS), sh = SHAPES[key], d = sh.gen();
     var types = ["identify", "volume"];
     if (sh.poly) types.push("count");
     if (sh.surf) types.push("surface");
     var type = pick(types);
-    var q = { key: key, sh: sh, d: d, type: type, geo: GSRS.buildScaled(key, d) };
+    var q = { mode: "number", geo: GSRS.buildScaled(key, d), dimsText: sh.dims(d) };
 
     if (type === "identify") {
+      q.mode = "choice";
       q.text = "What is the name of this shape?";
       var others = shuffle(NAMES.filter(function (n) { return n !== sh.name; })).slice(0, 3);
       others.push(sh.name);
       q.choices = shuffle(others);
       q.answer = sh.name;
-      q.mode = "choice";
+      q.right = "That's right — it's a " + sh.name + "!";
+      q.wrong = "Not quite — this one is a " + sh.name + ".";
     } else if (type === "count") {
       var part = pick(Object.keys(sh.poly));
       q.text = "How many " + part.toLowerCase() + " does this " + sh.name.toLowerCase() + " have?";
-      q.answer = sh.poly[part];
-      q.mode = "number"; q.exact = true;
+      q.answer = sh.poly[part]; q.exact = true;
       q.solution = "A " + sh.name.toLowerCase() + " has " + sh.poly[part] + " " + part.toLowerCase() + ".";
     } else if (type === "volume") {
       var v = sh.vol(d);
       q.text = "Find the VOLUME of this " + sh.name.toLowerCase() + ".";
-      q.answer = v; q.mode = "number"; q.tol = Math.max(1, 0.03 * Math.abs(v));
+      q.answer = v; q.tol = Math.max(1, 0.03 * Math.abs(v));
+      q.unit = "cm³";
       q.solution = sh.volF(d) + " ≈ " + r1(v) + " cm³";
     } else {
       var s = sh.surf(d);
       q.text = "Find the SURFACE AREA of this " + sh.name.toLowerCase() + ".";
-      q.answer = s; q.mode = "number"; q.tol = Math.max(1, 0.03 * Math.abs(s));
+      q.answer = s; q.tol = Math.max(1, 0.03 * Math.abs(s));
+      q.unit = "cm²";
       q.solution = sh.surfF(d) + " ≈ " + r1(s) + " cm²";
     }
     return q;
   }
 
+  function vocabQuestion() {
+    var entry = pick(VOCAB);
+    var term = entry[0], def = entry[1];
+    var q = { mode: "choice", geo: null };
+    if (Math.random() < 0.5) {
+      // definition -> word
+      q.text = "Which word means: “" + def + "”?";
+      var terms = shuffle(VOCAB.filter(function (e) { return e[0] !== term; }))
+                    .slice(0, 3).map(function (e) { return e[0]; });
+      terms.push(term);
+      q.choices = shuffle(terms);
+      q.answer = term;
+      q.right = "Correct — that's what “" + term + "” means.";
+      q.wrong = "The answer is “" + term + "”: " + def + ".";
+    } else {
+      // word -> definition
+      q.text = "What does “" + term + "” mean?";
+      var defs = shuffle(VOCAB.filter(function (e) { return e[0] !== term; }))
+                   .slice(0, 3).map(function (e) { return e[1]; });
+      defs.push(def);
+      q.choices = shuffle(defs);
+      q.answer = def;
+      q.right = "Correct! " + term + ": " + def + ".";
+      q.wrong = "“" + term + "” means: " + def + ".";
+    }
+    return q;
+  }
+
   /* ---- UI --------------------------------------------------------------- */
-  var el = {}, current = null, viewer = null, correct = 0, total = 0, answered = false;
+  var el = {}, current = null, viewer = null, correct = 0, total = 0,
+      answered = false, mode = "shapes";
 
   function mountFigure(geo) {
-    if (viewer) viewer.stop();
+    if (viewer) { viewer.stop(); viewer = null; }
     el.figure.innerHTML = "";
     var c = document.createElement("canvas");
     c.className = "quiz-canvas";
@@ -130,8 +195,14 @@
 
   function render(q) {
     answered = false;
-    mountFigure(q.geo);
-    el.dims.textContent = q.sh.dims(q.d);
+    if (q.geo) {
+      el.figure.hidden = false; el.dims.hidden = false;
+      mountFigure(q.geo);
+      el.dims.textContent = q.dimsText;
+    } else {
+      if (viewer) { viewer.stop(); viewer = null; }
+      el.figure.innerHTML = ""; el.figure.hidden = true; el.dims.hidden = true;
+    }
     el.question.textContent = q.text;
     el.feedback.textContent = ""; el.feedback.className = "quiz-feedback";
     el.next.hidden = true;
@@ -139,9 +210,12 @@
 
     if (q.mode === "choice") {
       el.check.hidden = true;
+      var longest = q.choices.reduce(function (m, c) { return Math.max(m, c.length); }, 0);
       q.choices.forEach(function (ch) {
         var b = document.createElement("button");
-        b.type = "button"; b.className = "quiz-choice"; b.textContent = ch;
+        b.type = "button";
+        b.className = "quiz-choice" + (longest > 34 ? " long" : "");
+        b.textContent = ch;
         b.addEventListener("click", function () { if (!answered) selectChoice(b, ch); });
         el.answer.appendChild(b);
       });
@@ -150,15 +224,15 @@
       var row = document.createElement("div"); row.className = "quiz-input-row";
       var inp = document.createElement("input");
       inp.type = "text"; inp.inputMode = "decimal"; inp.className = "quiz-input"; inp.id = "quiz-input";
-      inp.placeholder = q.type === "count" ? "how many?" : "your answer";
+      inp.placeholder = q.exact ? "how many?" : "your answer";
       inp.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); checkNumber(); } });
       row.appendChild(inp);
-      if (q.type !== "count") {
+      if (q.unit) {
         var u = document.createElement("span"); u.className = "quiz-unit";
-        u.textContent = q.type === "volume" ? "cm³" : "cm²"; row.appendChild(u);
+        u.textContent = q.unit; row.appendChild(u);
       }
       el.answer.appendChild(row);
-      if (q.type !== "count") {
+      if (!q.exact) {
         var hint = document.createElement("p"); hint.className = "quiz-hint";
         hint.textContent = "Tip: use π ≈ 3.14, then round to the nearest whole number.";
         el.answer.appendChild(hint);
@@ -175,15 +249,17 @@
       if (b.textContent === current.answer) b.classList.add("correct");
       else if (b === btn) b.classList.add("wrong");
     });
-    finish(ok, ok ? "That's right — it's a " + current.answer + "!"
-                  : "Not quite — this one is a " + current.answer + ".");
+    finish(ok, ok ? current.right : current.wrong);
   }
 
   function checkNumber() {
     if (answered) return;
     var inp = document.getElementById("quiz-input");
     var val = parseFloat((inp.value || "").replace(/[^0-9.\-]/g, ""));
-    if (isNaN(val)) { el.feedback.textContent = "Type a number first."; el.feedback.className = "quiz-feedback warn"; return; }
+    if (isNaN(val)) {
+      el.feedback.textContent = "Type a number first.";
+      el.feedback.className = "quiz-feedback warn"; return;
+    }
     answered = true; total++;
     var ok = current.exact ? (Math.round(val) === current.answer)
                            : (Math.abs(val - current.answer) <= current.tol);
@@ -199,7 +275,20 @@
     el.score.textContent = "Score: " + correct + " / " + total;
   }
 
-  function next() { current = makeQuestion(); render(current); }
+  function next() {
+    current = (mode === "vocab") ? vocabQuestion() : shapeQuestion();
+    render(current);
+  }
+
+  function setMode(m) {
+    mode = m;
+    correct = 0; total = 0;
+    el.score.textContent = "Score: 0 / 0";
+    el.tabs.forEach(function (t) {
+      t.classList.toggle("active", t.getAttribute("data-mode") === m);
+    });
+    next();
+  }
 
   document.addEventListener("DOMContentLoaded", function () {
     if (!window.GSRS) return;
@@ -211,8 +300,13 @@
     el.next = document.getElementById("quiz-next");
     el.feedback = document.getElementById("quiz-feedback");
     el.score = document.getElementById("quiz-score");
+    el.tabs = Array.prototype.slice.call(document.querySelectorAll(".mode-tab"));
+
     el.check.addEventListener("click", checkNumber);
     el.next.addEventListener("click", next);
-    next();
+    el.tabs.forEach(function (t) {
+      t.addEventListener("click", function () { setMode(t.getAttribute("data-mode")); });
+    });
+    setMode("shapes");
   });
 })();

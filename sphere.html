@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Sphere</title>
-  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=5">
-  <script src="viewer.js?v=5" defer></script>
-  <script src="article.js?v=5" defer></script>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
@@ -33,7 +33,7 @@
       <canvas class="shape-viewer" data-shape="sphere" width="360" height="330"
               aria-label="Interactive 3D model of a sphere. Drag to rotate."></canvas>
       <div class="viewer-controls">
-        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <span class="viewer-hint">&#8635; Drag the shape to spin it around</span>
         <div class="measure-row">
           <span class="measure-label">Show on shape:</span>
           <div class="measure-buttons"></div>
@@ -41,50 +41,46 @@
       </div>
     </figure>
 
+
     <h4>What Is It?</h4>
     <p>
-      A <strong>sphere</strong> is the set of all points in space that are the
-      same distance — the <strong>radius</strong> — from a single center point.
-      It is perfectly round in every direction, with no faces, no edges, and no
-      vertices, and it encloses the greatest possible volume for a given surface
-      area.
+      A <strong>sphere</strong> is a solid where every single point on the outside is exactly the same distance from the middle. That distance is the <strong>radius</strong>.
     </p>
     <p>
-      Everyday spheres include <strong>basketballs</strong>, marbles, ball
-      bearings, soap bubbles, and — very nearly — planets and stars, which gravity
-      pulls into round shapes.
+      Basketballs, marbles, bubbles and planets are spheres (or very nearly).
     </p>
 
-    <h4>Parts &amp; Sizes</h4>
-    <p>A sphere is a curved solid defined entirely by its radius <strong>r</strong>.</p>
+    <h4>Properties</h4>
+    <p>A sphere needs just one number: the radius <strong>r</strong>.</p>
     <table class="props">
-      <tr><th>Faces / Edges / Vertices</th><td>none (a single smooth surface)</td></tr>
-      <tr><th>Radius</th><td>r (center to surface)</td></tr>
-      <tr><th>Diameter</th><td>2r (across, through the center)</td></tr>
+      <tr><th>Flat faces</th><td>0</td></tr>
+      <tr><th>Curved surfaces</th><td>1 smooth surface</td></tr>
+      <tr><th>Edges</th><td>0</td></tr>
+      <tr><th>Corners (vertices)</th><td>0</td></tr>
+      <tr><th>Lines of symmetry</th><td>Endless &mdash; any line through the middle</td></tr>
+      <tr><th>Slice it anywhere and you get</th><td>A circle, every single time</td></tr>
+      <tr><th>Special property</th><td>The only shape that looks identical from every direction</td></tr>
+
     </table>
 
     <h4>Formulas</h4>
-    <p class="formula"><span class="label">Volume</span> V = (4⁄3)πr³</p>
-    <p class="formula"><span class="label">Surface area</span> SA = 4πr²</p>
+    <p class="formula"><span class="label">Volume</span> V = (4&frasl;3)&pi;r&sup3;</p>
+    <p class="formula"><span class="label">Surface area</span> SA = 4&pi;r&sup2;</p>
     <p class="formula"><span class="label">Diameter</span> d = 2r</p>
-    <p class="formula"><span class="label">Great circle</span> C = 2πr</p>
+    <p class="formula"><span class="label">Circle around the middle</span> C = 2&pi;r</p>
 
     <h4>Let's Try It!</h4>
     <div class="example">
       <p>Take a sphere with radius <strong>r = 3</strong>.</p>
-      <p>V = (4⁄3)πr³ = (4⁄3)π(27) = 36π ≈ <span class="result">113.10</span></p>
-      <p>SA = 4πr² = 4π(9) = 36π ≈ <span class="result">113.10</span></p>
-      <p>Diameter = 2r = <span class="result">6</span></p>
-      <p>Great-circle circumference = 2πr = 6π ≈ <span class="result">18.85</span></p>
+      <p>V = (4&frasl;3)&pi; &times; 27 = 36&pi; &asymp; <span class="result">113.10</span></p>
+      <p>SA = 4&pi; &times; 9 = 36&pi; &asymp; <span class="result">113.10</span></p>
+      <p>d = 2r = <span class="result">6</span></p>
+
     </div>
 
     <h4>Cool Fact</h4>
     <div class="funfact">
-      <p>
-        Of all shapes that enclose a given volume, the sphere has the smallest
-        surface area. That's why bubbles and water droplets pull themselves into
-        spheres — surface tension is minimizing area automatically.
-      </p>
+      <p>Out of every possible shape holding the same amount inside, the sphere has the smallest skin. Bubbles turn into spheres all by themselves for exactly that reason.</p>
     </div>
   </section>
 
@@ -93,7 +89,7 @@
   </div>
 
   <footer>
-    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

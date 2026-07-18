@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Quiz</title>
-  <link href="style.css?v=5" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=5">
-  <script src="viewer.js?v=5" defer></script>
-  <script src="quiz.js?v=5" defer></script>
+  <link href="style.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="quiz.js?v=6" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
@@ -25,12 +25,16 @@
   </header>
 
   <main class="content">
-    <h3>Shape Quiz</h3>
+    <h3>Quiz</h3>
     <p>
-      Each question shows a random shape drawn to scale. You can <strong>drag the
-      picture to spin it</strong> and look at it from any side. Name it, count its
-      parts, or work out its volume and surface area. The questions never run out!
+      Pick a mode and answer as many as you like &mdash; new questions are made up
+      every time, so they never run out.
     </p>
+
+    <div class="mode-tabs">
+      <button class="mode-tab active" type="button" data-mode="shapes">Shapes</button>
+      <button class="mode-tab" type="button" data-mode="vocab">Vocabulary</button>
+    </div>
 
     <div class="quiz-card">
       <div class="quiz-figure" id="quiz-figure"></div>
@@ -39,7 +43,7 @@
       <div class="quiz-answer" id="quiz-answer"></div>
       <div class="quiz-actions">
         <button id="quiz-check" class="quiz-btn" type="button">Check</button>
-        <button id="quiz-next" class="quiz-btn ghost" type="button" hidden>Next question →</button>
+        <button id="quiz-next" class="quiz-btn ghost" type="button" hidden>Next question &rarr;</button>
       </div>
       <p class="quiz-feedback" id="quiz-feedback"></p>
     </div>
@@ -48,7 +52,7 @@
   </main>
 
   <footer>
-    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

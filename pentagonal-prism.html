@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Pentagonal Prism</title>
-  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=5">
-  <script src="viewer.js?v=5" defer></script>
-  <script src="article.js?v=5" defer></script>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
@@ -33,7 +33,7 @@
       <canvas class="shape-viewer" data-shape="pentagonal-prism" width="360" height="330"
               aria-label="Interactive 3D model of a pentagonal prism. Drag to rotate."></canvas>
       <div class="viewer-controls">
-        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <span class="viewer-hint">&#8635; Drag the shape to spin it around</span>
         <div class="measure-row">
           <span class="measure-label">Show on shape:</span>
           <div class="measure-buttons"></div>
@@ -41,56 +41,47 @@
       </div>
     </figure>
 
+
     <h4>What Is It?</h4>
     <p>
-      A <strong>pentagonal prism</strong> has two identical, parallel pentagonal
-      bases connected by five rectangular faces. With regular pentagons for bases
-      and sides perpendicular to them, it is a <em>right regular pentagonal
-      prism</em> — the form of the wooden block in this set.
+      A <strong>pentagonal prism</strong> has two matching pentagon ends joined by 5 rectangles. Every slice across it is the same pentagon.
     </p>
     <p>
-      The most famous real-world example is the <strong>Pentagon building</strong>
-      in Virginia, essentially a short pentagonal prism. You'll also find the shape
-      in some <strong>pencils</strong>, nuts, and architectural columns.
+      The Pentagon building in America is a very short, very wide pentagonal prism. Some pencils and bolts use this shape too.
     </p>
 
-    <h4>Parts &amp; Sizes</h4>
-    <p>A right regular pentagonal prism is defined by the base side <strong>a</strong> and the height <strong>h</strong>.</p>
+    <h4>Properties</h4>
+    <p>A regular pentagonal prism needs two numbers: the base side <strong>a</strong> and the height <strong>h</strong>.</p>
     <table class="props">
-      <tr><th>Faces</th><td>7 (2 pentagons + 5 rectangles)</td></tr>
+      <tr><th>Faces</th><td>7 &mdash; 2 pentagons + 5 rectangles</td></tr>
       <tr><th>Edges</th><td>15</td></tr>
-      <tr><th>Vertices</th><td>10</td></tr>
-      <tr><th>Base side</th><td>a</td></tr>
-      <tr><th>Height</th><td>h</td></tr>
+      <tr><th>Corners (vertices)</th><td>10</td></tr>
+      <tr><th>Bases</th><td>2 matching pentagons</td></tr>
+      <tr><th>Flat or curved</th><td>All flat</td></tr>
+      <tr><th>Slice it across and you get</th><td>A pentagon</td></tr>
+      <tr><th>Euler's rule</th><td>10 &minus; 15 + 7 = 2 &#10003;</td></tr>
+
     </table>
-    <p>
-      Like every flat-sided shape, it follows <strong>Euler's rule</strong> — corners − edges + faces = 10 − 15 + 7 = 2.
-    </p>
 
     <h4>Formulas</h4>
-    <p class="formula"><span class="label">Base area</span> B = (1⁄4)√(5(5 + 2√5))·a² ≈ 1.7205a²</p>
+    <p class="formula"><span class="label">Base area</span> B &asymp; 1.72 &times; a&sup2;</p>
     <p class="formula"><span class="label">Base perimeter</span> P = 5a</p>
-    <p class="formula"><span class="label">Volume</span> V = B·h</p>
-    <p class="formula"><span class="label">Lateral SA</span> LSA = P·h = 5ah</p>
-    <p class="formula"><span class="label">Total SA</span> SA = 2B + 5ah</p>
+    <p class="formula"><span class="label">Volume</span> V = B &times; h</p>
+    <p class="formula"><span class="label">Side surface</span> LSA = 5ah</p>
+    <p class="formula"><span class="label">Surface area</span> SA = 2B + 5ah</p>
 
     <h4>Let's Try It!</h4>
     <div class="example">
-      <p>Take a pentagonal prism with base side <strong>a = 4</strong> and height <strong>h = 10</strong>.</p>
-      <p>B = (1⁄4)√(5(5 + 2√5))·a² ≈ 1.7205 × 16 ≈ 27.53</p>
-      <p>V = B·h ≈ 27.53 × 10 ≈ <span class="result">275.28</span></p>
-      <p>LSA = 5ah = 5 × 4 × 10 = <span class="result">200</span></p>
-      <p>Total SA = 2B + 5ah ≈ 55.06 + 200 ≈ <span class="result">255.06</span></p>
+      <p>Take a pentagonal prism with <strong>a = 4</strong> and <strong>h = 10</strong>.</p>
+      <p>B &asymp; 1.72 &times; 16 &asymp; 27.53</p>
+      <p>V = B &times; h &asymp; <span class="result">275.28</span></p>
+      <p>SA = 2B + 5ah &asymp; 55.06 + 200 &asymp; <span class="result">255.06</span></p>
+
     </div>
 
     <h4>Cool Fact</h4>
     <div class="funfact">
-      <p>
-        The Pentagon — headquarters of the U.S. Department of Defense — is one of
-        the world's largest office buildings, yet its pentagonal-prism design lets
-        a person walk between any two of its farthest points in about seven
-        minutes.
-      </p>
+      <p>The Pentagon is one of the biggest office buildings on Earth, yet its five-sided design means you can walk between any two of its farthest points in about seven minutes.</p>
     </div>
   </section>
 
@@ -99,7 +90,7 @@
   </div>
 
   <footer>
-    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

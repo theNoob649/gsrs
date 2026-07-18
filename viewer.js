@@ -13,6 +13,7 @@ window.GSRS = (function () {
   var C_LIGHT = [206, 226, 247];  // lit face
   var C_DARK  = [79, 122, 176];   // shaded face
   var C_EDGE  = "#243a56";
+  var C_HIDDEN = "#8fa5c0";       // dashed edges hidden behind the solid
   var C_HL    = "#e2571f";        // highlight (orange)
   var LIGHT   = normalize([-0.4, 0.62, 0.68]);
 
@@ -329,6 +330,15 @@ window.GSRS = (function () {
       }
     });
     geo.edges = Object.keys(em).map(function (k2) { return em[k2]; });
+    // A "crease" is a real edge you'd draw (sharp fold). Smooth tessellation
+    // seams on spheres/cylinders are not creases, so they stay invisible.
+    geo.edges.forEach(function (e) {
+      if (e.faces.length === 2) {
+        e.crease = dot(geo.fnorm[e.faces[0]], geo.fnorm[e.faces[1]]) < 0.94;
+      } else {
+        e.crease = true;
+      }
+    });
     return geo;
   }
 
@@ -340,8 +350,8 @@ window.GSRS = (function () {
     var RN = geo.fnorm.map(function (nn) { return rot(nn, rx, ry); });
     var maxR = 0;
     geo.verts.forEach(function (p) { maxR = Math.max(maxR, Math.hypot(p[0],p[1],p[2])); });
-    var pad = 14 * dpr;
-    var scale = (Math.min(W, H) / 2 - pad) / maxR;
+    var pad = Math.min(W, H) * 0.08;
+    var scale = Math.max(1, (Math.min(W, H) / 2 - pad) / maxR);
     var cx = W/2, cy = H/2;
     function P(v) { return [cx + v[0]*scale, cy - v[1]*scale]; }
 
@@ -368,17 +378,34 @@ window.GSRS = (function () {
       if (geo.smooth) { ctx.strokeStyle = col; ctx.lineWidth = 1*dpr; ctx.stroke(); }
     });
 
-    // edges: for solids draw visible; for smooth draw silhouette only
+    // Edges. Real edges (creases, outlines) are drawn every frame; the ones
+    // facing away from you are dashed, exactly like a technical drawing.
     ctx.lineJoin = "round"; ctx.lineCap = "round";
-    ctx.strokeStyle = C_EDGE;
-    ctx.lineWidth = 1.5 * dpr;
+    var toDraw = [];
     geo.edges.forEach(function (e) {
       var front = 0;
       e.faces.forEach(function (fi) { if (RN[fi][2] > 0) front++; });
-      var show = geo.smooth ? (e.faces.length === 1 || front === 1)
-                            : (front > 0);
-      if (!show) return;
-      var s0 = P(RV[e.a]), s1 = P(RV[e.b]);
+      var boundary = e.faces.length === 1;
+      var silhouette = e.faces.length === 2 && front === 1;
+      if (!(e.crease || boundary || silhouette)) return;
+      toDraw.push({ e: e, hidden: front === 0 });
+    });
+    // hidden edges first, dashed and lighter
+    ctx.setLineDash([5 * dpr, 4 * dpr]);
+    ctx.strokeStyle = C_HIDDEN;
+    ctx.lineWidth = 1.2 * dpr;
+    toDraw.forEach(function (d) {
+      if (!d.hidden) return;
+      var s0 = P(RV[d.e.a]), s1 = P(RV[d.e.b]);
+      ctx.beginPath(); ctx.moveTo(s0[0], s0[1]); ctx.lineTo(s1[0], s1[1]); ctx.stroke();
+    });
+    // visible edges solid on top
+    ctx.setLineDash([]);
+    ctx.strokeStyle = C_EDGE;
+    ctx.lineWidth = 1.5 * dpr;
+    toDraw.forEach(function (d) {
+      if (d.hidden) return;
+      var s0 = P(RV[d.e.a]), s1 = P(RV[d.e.b]);
       ctx.beginPath(); ctx.moveTo(s0[0], s0[1]); ctx.lineTo(s1[0], s1[1]); ctx.stroke();
     });
 
@@ -479,7 +506,126 @@ window.GSRS = (function () {
     };
   }
 
+  /* ======================================================================
+     2D (flat) shapes — drawn face-on, with the same highlight system.
+     ====================================================================== */
+  function reg2(n, r, start) {
+    var p = [], i;
+    for (i = 0; i < n; i++) {
+      var a = (start === undefined ? 90 : start) * Math.PI/180 + i * 2*Math.PI/n;
+      p.push([r*Math.cos(a), r*Math.sin(a)]);
+    }
+    return p;
+  }
+  var SQ = [[-1,-1],[1,-1],[1,1],[-1,1]];
+  var RECT = [[-1.4,-0.85],[1.4,-0.85],[1.4,0.85],[-1.4,0.85]];
+  var TRI = reg2(3, 1.2);
+  var PARA = [[-1.4,-0.75],[0.6,-0.75],[1.4,0.75],[-0.6,0.75]];
+  var RHOM = [[0,-1.2],[1.05,0],[0,1.2],[-1.05,0]];
+  var TRAP = [[-1.4,-0.75],[1.4,-0.75],[0.75,0.75],[-0.75,0.75]];
+
+  var SHAPES2D = {
+    circle:   { name:"Circle", round:{ a:1.2, b:1.2 }, measures:[
+                  { key:"radius", label:"Radius (r)", segs:[[[0,0],[1.2,0]]] },
+                  { key:"diameter", label:"Diameter (d)", segs:[[[-1.2,0],[1.2,0]]] } ] },
+    ellipse:  { name:"Ellipse", round:{ a:1.45, b:0.9 }, measures:[
+                  { key:"a", label:"Long radius (a)", segs:[[[0,0],[1.45,0]]] },
+                  { key:"b", label:"Short radius (b)", segs:[[[0,0],[0,0.9]]] } ] },
+    square:   { name:"Square", poly:SQ, measures:[
+                  { key:"side", label:"Side (s)", segs:[[[-1,-1],[1,-1]]] },
+                  { key:"diagonal", label:"Diagonal", segs:[[[-1,-1],[1,1]]] } ] },
+    rectangle:{ name:"Rectangle", poly:RECT, measures:[
+                  { key:"length", label:"Length (l)", segs:[[[-1.4,-0.85],[1.4,-0.85]]] },
+                  { key:"width", label:"Width (w)", segs:[[[1.4,-0.85],[1.4,0.85]]] },
+                  { key:"diagonal", label:"Diagonal", segs:[[[-1.4,-0.85],[1.4,0.85]]] } ] },
+    triangle: { name:"Triangle", poly:TRI, measures:[
+                  { key:"side", label:"Side (a)", segs:[[TRI[1],TRI[2]]] },
+                  { key:"height", label:"Height (h)", segs:[[[0,TRI[1][1]],[0,TRI[0][1]]]] } ] },
+    parallelogram:{ name:"Parallelogram", poly:PARA, measures:[
+                  { key:"base", label:"Base (b)", segs:[[[-1.4,-0.75],[0.6,-0.75]]] },
+                  { key:"height", label:"Height (h)", segs:[[[-0.6,-0.75],[-0.6,0.75]]] },
+                  { key:"side", label:"Slanted side", segs:[[[0.6,-0.75],[1.4,0.75]]] } ] },
+    rhombus:  { name:"Rhombus", poly:RHOM, measures:[
+                  { key:"side", label:"Side (s)", segs:[[RHOM[0],RHOM[1]]] },
+                  { key:"d1", label:"Long diagonal", segs:[[[0,-1.2],[0,1.2]]] },
+                  { key:"d2", label:"Short diagonal", segs:[[[-1.05,0],[1.05,0]]] } ] },
+    trapezoid:{ name:"Trapezoid", poly:TRAP, measures:[
+                  { key:"a", label:"Bottom base (a)", segs:[[[-1.4,-0.75],[1.4,-0.75]]] },
+                  { key:"b", label:"Top base (b)", segs:[[[-0.75,0.75],[0.75,0.75]]] },
+                  { key:"height", label:"Height (h)", segs:[[[0,-0.75],[0,0.75]]] } ] },
+    pentagon: { name:"Pentagon", poly:reg2(5,1.2), measures:[
+                  { key:"side", label:"Side (s)", segs:[[reg2(5,1.2)[1], reg2(5,1.2)[2]]] } ] },
+    hexagon:  { name:"Hexagon", poly:reg2(6,1.2,0), measures:[
+                  { key:"side", label:"Side (s)", segs:[[reg2(6,1.2,0)[0], reg2(6,1.2,0)[1]]] } ] }
+  };
+
+  function render2D(ctx, W, H, sh, hlKey, dpr) {
+    ctx.clearRect(0, 0, W, H);
+    // padding scales with the canvas so tiny thumbnails stay valid
+    var pad = Math.min(W, H) * 0.10;
+    var maxR = 1.5;
+    var scale = Math.max(1, (Math.min(W, H) / 2 - pad) / maxR);
+    var cx = W/2, cy = H/2;
+    function P(p) { return [cx + p[0]*scale, cy - p[1]*scale]; }
+
+    ctx.lineJoin = "round"; ctx.lineCap = "round";
+    var grad = ctx.createLinearGradient(0, 0, 0, H);
+    grad.addColorStop(0, "rgb(206,226,247)");
+    grad.addColorStop(1, "rgb(150,186,226)");
+
+    if (sh.round) {
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, sh.round.a*scale, sh.round.b*scale, 0, 0, Math.PI*2);
+      ctx.fillStyle = grad; ctx.fill();
+      ctx.strokeStyle = C_EDGE; ctx.lineWidth = 2*dpr; ctx.stroke();
+    } else {
+      ctx.beginPath();
+      sh.poly.forEach(function (p, i) {
+        var s = P(p);
+        if (i === 0) ctx.moveTo(s[0], s[1]); else ctx.lineTo(s[0], s[1]);
+      });
+      ctx.closePath();
+      ctx.fillStyle = grad; ctx.fill();
+      ctx.strokeStyle = C_EDGE; ctx.lineWidth = 2*dpr; ctx.stroke();
+    }
+
+    if (hlKey) {
+      var m = null;
+      sh.measures.forEach(function (x) { if (x.key === hlKey) m = x; });
+      if (m) m.segs.forEach(function (seg) {
+        var a = P(seg[0]), b = P(seg[1]);
+        ctx.strokeStyle = "#fff"; ctx.lineWidth = 6*dpr;
+        ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]); ctx.stroke();
+        ctx.strokeStyle = C_HL; ctx.lineWidth = 3*dpr;
+        ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]); ctx.stroke();
+        [a,b].forEach(function (pt) {
+          ctx.beginPath(); ctx.arc(pt[0], pt[1], 3.4*dpr, 0, 7);
+          ctx.fillStyle = C_HL; ctx.fill();
+          ctx.lineWidth = 1.5*dpr; ctx.strokeStyle = "#fff"; ctx.stroke();
+        });
+      });
+    }
+  }
+
+  function mount2D(canvas, key) {
+    var sh = SHAPES2D[key];
+    if (!sh) return null;
+    var ctx = canvas.getContext("2d");
+    var dpr = sizeCanvas(canvas);
+    var hl = null;
+    function frame() { render2D(ctx, canvas.width, canvas.height, sh, hl, dpr); }
+    frame();
+    return {
+      setHighlight: function (k) { hl = k; frame(); },
+      redraw: frame,
+      stop: function () {},
+      measures: sh.measures
+    };
+  }
+
   return {
+    mount2D: mount2D,
+    SHAPES2D: SHAPES2D,
     mountViewer: function (canvas, key) { return mount(canvas, key, { interactive:true }); },
     mountThumb:  function (canvas, key) { return mount(canvas, key, { interactive:false, rx:-0.5, ry:0.7 }); },
     // Draw an arbitrary (to-scale) geometry, optionally draggable.

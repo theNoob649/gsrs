@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Triangular Prism</title>
-  <link href="article.css?v=5" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=5">
-  <script src="viewer.js?v=5" defer></script>
-  <script src="article.js?v=5" defer></script>
+  <link href="article.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="article.js?v=6" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
@@ -26,14 +26,14 @@
 
   <section class="article">
     <h2>Triangular Prism</h2>
-    <h3>A triangle tube — like a Toblerone bar</h3>
+    <h3>A triangle tube &mdash; like a Toblerone bar</h3>
     <hr>
 
     <figure class="shape-figure">
       <canvas class="shape-viewer" data-shape="triangular-prism" width="360" height="330"
               aria-label="Interactive 3D model of a triangular prism. Drag to rotate."></canvas>
       <div class="viewer-controls">
-        <span class="viewer-hint">↻ Drag the shape to spin it around</span>
+        <span class="viewer-hint">&#8635; Drag the shape to spin it around</span>
         <div class="measure-row">
           <span class="measure-label">Show on shape:</span>
           <div class="measure-buttons"></div>
@@ -41,53 +41,45 @@
       </div>
     </figure>
 
+
     <h4>What Is It?</h4>
     <p>
-      A <strong>triangular prism</strong> has two identical, parallel triangular
-      bases connected by three rectangular faces. Slide a triangle straight
-      through space and the solid it sweeps out is a triangular prism.
+      A <strong>triangular prism</strong> has two matching triangle ends joined by 3 rectangles. Slide a triangle straight through space and the shape it sweeps out is a triangular prism.
     </p>
     <p>
-      The classic example is a <strong>glass optical prism</strong> that splits
-      white light into a rainbow; you'll also recognize the shape in
-      Toblerone-style chocolate bars and many tent and roof profiles.
+      Toblerone bars, camping tents and the glass prisms that split light are all this shape.
     </p>
 
-    <h4>Parts &amp; Sizes</h4>
-    <p>Defined by the triangular base area <strong>B</strong>, the triangle's perimeter <strong>P</strong>, and the prism length <strong>L</strong>.</p>
+    <h4>Properties</h4>
+    <p>You need the triangle's area <strong>B</strong>, the triangle's perimeter <strong>P</strong>, and the length <strong>L</strong> of the prism.</p>
     <table class="props">
-      <tr><th>Faces</th><td>5 (2 triangles + 3 rectangles)</td></tr>
+      <tr><th>Faces</th><td>5 &mdash; 2 triangles + 3 rectangles</td></tr>
       <tr><th>Edges</th><td>9</td></tr>
-      <tr><th>Vertices</th><td>6</td></tr>
-      <tr><th>Base area</th><td>B</td></tr>
-      <tr><th>Base perimeter</th><td>P</td></tr>
-      <tr><th>Length</th><td>L</td></tr>
+      <tr><th>Corners (vertices)</th><td>6</td></tr>
+      <tr><th>Bases</th><td>2 matching triangles</td></tr>
+      <tr><th>Flat or curved</th><td>All flat</td></tr>
+      <tr><th>Slice it across and you get</th><td>The same triangle, all the way along</td></tr>
+      <tr><th>Euler's rule</th><td>6 &minus; 9 + 5 = 2 &#10003;</td></tr>
+
     </table>
-    <p>
-      Like every flat-sided shape, it follows <strong>Euler's rule</strong> — corners − edges + faces = 6 − 9 + 5 = 2.
-    </p>
 
     <h4>Formulas</h4>
-    <p class="formula"><span class="label">Volume</span> V = B · L</p>
-    <p class="formula"><span class="label">Surface area</span> SA = 2B + P · L</p>
-    <p class="formula"><span class="label">Equilateral base</span> B = (√3⁄4)a², &nbsp; P = 3a</p>
+    <p class="formula"><span class="label">Volume</span> V = B &times; L</p>
+    <p class="formula"><span class="label">Surface area</span> SA = 2B + P &times; L</p>
+    <p class="formula"><span class="label">Equilateral base</span> B = (&radic;3&frasl;4)a&sup2;, &nbsp; P = 3a</p>
 
     <h4>Let's Try It!</h4>
     <div class="example">
-      <p>Take a prism whose base is an equilateral triangle with side <strong>a = 4</strong>, and length <strong>L = 10</strong>.</p>
-      <p>B = (√3⁄4)a² = (√3⁄4)(16) = 4√3 ≈ 6.93</p>
-      <p>P = 3a = 12</p>
-      <p>V = B · L = 4√3 × 10 = 40√3 ≈ <span class="result">69.28</span></p>
-      <p>SA = 2B + P · L = 8√3 + 120 ≈ <span class="result">133.86</span></p>
+      <p>Take a prism with an equilateral triangle of side <strong>a = 4</strong> and length <strong>L = 10</strong>.</p>
+      <p>B = (&radic;3&frasl;4) &times; 16 = 4&radic;3 &asymp; 6.93</p>
+      <p>V = B &times; L &asymp; <span class="result">69.28</span></p>
+      <p>SA = 2B + 3a &times; L = 8&radic;3 + 120 &asymp; <span class="result">133.86</span></p>
+
     </div>
 
     <h4>Cool Fact</h4>
     <div class="funfact">
-      <p>
-        When Isaac Newton passed sunlight through a triangular prism, he showed
-        that white light is actually a mixture of every color — a single glass
-        prism rewrote our understanding of light.
-      </p>
+      <p>When Isaac Newton shone sunlight through a glass triangular prism, he proved white light is really every colour mixed together.</p>
     </div>
   </section>
 
@@ -96,7 +88,7 @@
   </div>
 
   <footer>
-    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

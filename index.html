@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G.S.R.S. - Geometric Shapes Reference Site</title>
-  <link href="style.css?v=5" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="favicon.png?v=5">
-  <script src="viewer.js?v=5" defer></script>
-  <script src="script.js?v=5" defer></script>
+  <link href="style.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="favicon.png?v=6">
+  <script src="viewer.js?v=6" defer></script>
+  <script src="script.js?v=6" defer></script>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="favicon.png?v=5" alt="" width="44" height="44" />
+      <img class="brand-logo" src="favicon.png?v=6" alt="" width="44" height="44" />
       <span class="brand-text">
         <span class="brand-title">G.S.R.S.</span>
         <span class="brand-sub">Geometric Shapes Reference Site</span>
@@ -25,11 +25,13 @@
   </header>
 
   <main class="content">
-    <h3>Explore 3D shapes — the kind you can hold in your hand.</h3>
+    <h3>Explore flat shapes and solid shapes.</h3>
     <p>
-      Pick a shape to spin it around, see what it is made of, and learn the math
-      that measures it. Every shape here matches a real wooden block you can hold.
-      When you are ready, try the <a href="quiz.html">Quiz</a> to test yourself!
+      <strong>Flat shapes (2D)</strong> have length and width, like a drawing on
+      paper. <strong>Solid shapes (3D)</strong> also have thickness, so you can
+      hold them in your hand. Pick any shape to see its properties, spin it around,
+      and learn the formulas that measure it &mdash; then try the
+      <a href="quiz.html">Quiz</a>.
     </p>
 
     <hr>
@@ -43,13 +45,29 @@
               d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm5 12 4 4" />
       </svg>
       <input class="shape-search" type="search" id="shape-search"
-             placeholder="Search shapes… (e.g. prism, sphere, cone)"
+             placeholder="Search shapes… (e.g. prism, circle, cone)"
              aria-label="Search shapes" autocomplete="off" />
     </div>
 
     <div class="shape-index">
       <section class="shape-cat">
-        <h3 class="cat-title">Boxes &amp; Prisms</h3>
+        <h3 class="cat-title">Flat Shapes (2D)</h3>
+        <div class="shape-links">
+          <a class="shape-card" href="circle.html"><canvas class="thumb" data-shape2d="circle"></canvas><span class="shape-name">Circle</span></a>
+          <a class="shape-card" href="ellipse.html"><canvas class="thumb" data-shape2d="ellipse"></canvas><span class="shape-name">Ellipse</span></a>
+          <a class="shape-card" href="square.html"><canvas class="thumb" data-shape2d="square"></canvas><span class="shape-name">Square</span></a>
+          <a class="shape-card" href="rectangle.html"><canvas class="thumb" data-shape2d="rectangle"></canvas><span class="shape-name">Rectangle</span></a>
+          <a class="shape-card" href="triangle.html"><canvas class="thumb" data-shape2d="triangle"></canvas><span class="shape-name">Triangle</span></a>
+          <a class="shape-card" href="parallelogram.html"><canvas class="thumb" data-shape2d="parallelogram"></canvas><span class="shape-name">Parallelogram</span></a>
+          <a class="shape-card" href="rhombus.html"><canvas class="thumb" data-shape2d="rhombus"></canvas><span class="shape-name">Rhombus</span></a>
+          <a class="shape-card" href="trapezoid.html"><canvas class="thumb" data-shape2d="trapezoid"></canvas><span class="shape-name">Trapezoid</span></a>
+          <a class="shape-card" href="pentagon.html"><canvas class="thumb" data-shape2d="pentagon"></canvas><span class="shape-name">Pentagon</span></a>
+          <a class="shape-card" href="hexagon.html"><canvas class="thumb" data-shape2d="hexagon"></canvas><span class="shape-name">Hexagon</span></a>
+        </div>
+      </section>
+
+      <section class="shape-cat">
+        <h3 class="cat-title">Boxes &amp; Prisms (3D)</h3>
         <div class="shape-links">
           <a class="shape-card" href="cube.html"><canvas class="thumb" data-shape="cube"></canvas><span class="shape-name">Cube</span></a>
           <a class="shape-card" href="cuboid.html"><canvas class="thumb" data-shape="cuboid"></canvas><span class="shape-name">Cuboid</span></a>
@@ -60,7 +78,7 @@
       </section>
 
       <section class="shape-cat">
-        <h3 class="cat-title">Pyramids &amp; Cones</h3>
+        <h3 class="cat-title">Pyramids &amp; Cones (3D)</h3>
         <div class="shape-links">
           <a class="shape-card" href="square-pyramid.html"><canvas class="thumb" data-shape="square-pyramid"></canvas><span class="shape-name">Square Pyramid</span></a>
           <a class="shape-card" href="cone.html"><canvas class="thumb" data-shape="cone"></canvas><span class="shape-name">Cone</span></a>
@@ -68,7 +86,7 @@
       </section>
 
       <section class="shape-cat">
-        <h3 class="cat-title">Round Shapes</h3>
+        <h3 class="cat-title">Round Solids (3D)</h3>
         <div class="shape-links">
           <a class="shape-card" href="sphere.html"><canvas class="thumb" data-shape="sphere"></canvas><span class="shape-name">Sphere</span></a>
           <a class="shape-card" href="cylinder.html"><canvas class="thumb" data-shape="cylinder"></canvas><span class="shape-name">Cylinder</span></a>
@@ -84,19 +102,19 @@
 
     <h2>Did You Know?</h2>
     <p>
-      Every flat-sided shape here follows one neat rule, called
-      <strong>Euler's formula</strong>:
+      Every solid shape with flat sides follows one neat rule, called
+      <strong>Euler's rule</strong>:
     </p>
-    <p class="euler">Corners − Edges + Faces = 2</p>
+    <p class="euler">Corners &minus; Edges + Faces = 2</p>
     <p>
       Count the <strong>corners</strong>, take away the <strong>edges</strong>, then
-      add the <strong>faces</strong>, and you always get 2. A cube gives 8 − 12 + 6 = 2.
-      Try it on any box, prism, or pyramid on this page!
+      add the <strong>faces</strong>, and you always get 2. A cube gives
+      8 &minus; 12 + 6 = 2. Try it on any box, prism, or pyramid on this page!
     </p>
   </main>
 
   <footer>
-    <p>© 2025 G.S.R.S. All Rights Reserved.</p>
+    <p>&copy; 2025 G.S.R.S. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

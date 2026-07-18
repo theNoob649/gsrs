@@ -1,15 +1,13 @@
 /* G.S.R.S. — article.js
-   Mounts the interactive 3D viewer on each shape page and builds the
-   "show on shape" measurement buttons that highlight parts of the solid. */
+   Mounts the shape viewer on each article page (interactive 3D solids, or a
+   flat 2D diagram) and builds the "show on shape" measurement buttons. */
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".shape-viewer").forEach(function (canvas) {
-    var key = canvas.getAttribute("data-shape");
-    if (!window.GSRS || !GSRS.SHAPES[key]) return;
+  if (!window.GSRS) return;
 
-    var viewer = GSRS.mountViewer(canvas, key);
-    var box = canvas.closest(".shape-figure").querySelector(".measure-buttons");
-    if (!box) return;
-
+  function wire(canvas, viewer) {
+    var fig = canvas.closest(".shape-figure");
+    var box = fig && fig.querySelector(".measure-buttons");
+    if (!box || !viewer) return;
     var active = null;
     viewer.measures.forEach(function (m) {
       var b = document.createElement("button");
@@ -30,5 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       box.appendChild(b);
     });
+  }
+
+  /* 3D solids — draggable */
+  document.querySelectorAll(".shape-viewer").forEach(function (canvas) {
+    var key = canvas.getAttribute("data-shape");
+    if (!GSRS.SHAPES[key]) return;
+    wire(canvas, GSRS.mountViewer(canvas, key));
+  });
+
+  /* 2D flat shapes */
+  document.querySelectorAll(".shape-viewer-2d").forEach(function (canvas) {
+    var key = canvas.getAttribute("data-shape2d");
+    if (!GSRS.SHAPES2D[key]) return;
+    wire(canvas, GSRS.mount2D(canvas, key));
   });
 });
