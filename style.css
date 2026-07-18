@@ -5,7 +5,7 @@
    ========================================================================== */
 
 :root {
-  --page-bg:  #f6f7f9;   /* area around the content column   */
+  --page-bg:  #e4e7ec;   /* light grey around the content column */
   --content:  #ffffff;   /* article/content surface          */
   --text:     #1e2126;   /* body text                        */
   --muted:    #5a6472;   /* subtitles, captions              */
@@ -101,33 +101,109 @@ hr {
   margin: 24px 0;
 }
 
-/* ---- Shape index (home) — multi-column list of links ---------------------- */
+/* ---- "What's inside each article" feature list ---------------------------- */
+.feature-list {
+  list-style: none;
+  margin: 20px 0 6px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+.feature-list li {
+  background: #f4f6f9;
+  border: 1px solid var(--rule-lt);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 11px 13px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.feature-list li strong {
+  display: block;
+  color: var(--heading);
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+
+/* ---- Search box ----------------------------------------------------------- */
+.shape-search {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 1rem;
+  padding: 11px 14px;
+  margin: 6px 0 8px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+.shape-search:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47, 90, 168, 0.14);
+}
+
+/* ---- Categorized shape index --------------------------------------------- */
+.shape-cat { margin-top: 22px; }
+
+.shape-cat .cat-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule-lt);
+}
+
 .shape-links {
-  columns: 3 200px;
-  column-gap: 34px;
-  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
 }
 
 .shape-links a {
   display: block;
-  padding: 7px 0 7px 16px;
-  border-bottom: 1px solid var(--rule-lt);
-  position: relative;
-  break-inside: avoid;
+  padding: 12px 14px;
+  background: #f4f6f9;
+  border: 1px solid var(--rule-lt);
+  border-radius: 6px;
   color: var(--link);
+  font-weight: 600;
+  transition: background 0.14s ease, border-color 0.14s ease, transform 0.1s ease;
 }
-
-.shape-links a::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--muted);
-  font-size: 0.8em;
-}
-
 .shape-links a:hover,
-.shape-links a:focus { text-decoration: none; color: var(--link-hov); }
-.shape-links a:hover::before { color: var(--accent); }
+.shape-links a:focus {
+  text-decoration: none;
+  color: var(--link-hov);
+  background: #eaf1fb;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.no-results {
+  color: var(--muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+/* ---- Euler call-out ------------------------------------------------------- */
+.euler {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  letter-spacing: 1px;
+  background: #f0f5ff;
+  border: 1px solid #d5e0f0;
+  border-radius: 6px;
+  padding: 14px;
+  margin: 8px 0 16px;
+}
 
 /* ---- Footer --------------------------------------------------------------- */
 footer {
